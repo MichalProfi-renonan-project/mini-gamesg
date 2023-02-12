@@ -1,14 +1,12 @@
-﻿<Window x:Class="tic_tac_toe.MainWindow"
+﻿<Window x:Class="tic_tac_toe.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tic_tac_toe"
         mc:Ignorable="d"
-          Title="MainWindow" Height="400" Width="577.049">
-    <Grid Background="Red" OpacityMask="Black">
-        <Button Content="Start" Height="51" Margin="177,46,176.4,0" VerticalAlignment="Top" Click="Button_Click"/>
-
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        
     </Grid>
 </Window>
-
