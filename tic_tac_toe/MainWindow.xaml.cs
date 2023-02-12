@@ -20,7 +20,7 @@ namespace tic_tac_toe
     /// </summary>
     public partial class MainWindow : Window
     {
-        int playercounter = 1;
+        int playercounter = 0;
 
         public MainWindow()
         {
@@ -45,7 +45,7 @@ namespace tic_tac_toe
                 playercounter++;
             }
 
-            lbl1.Content = "X";
+
 
 
         }
@@ -69,7 +69,6 @@ namespace tic_tac_toe
             }
 
 
-            lbl2.Content = "X";
 
         }
 
