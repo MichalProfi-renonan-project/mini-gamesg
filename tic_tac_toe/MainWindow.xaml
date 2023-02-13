@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tic_tac_toe"
         mc:Ignorable="d"
-          Title="MainWindow" Height="400" Width="577.049">
+          Title="MainWindow" Height="450" Width="800">
     <Grid Background="Red" OpacityMask="Black">
         <Button Content="Start" Height="51" Margin="177,46,176.4,0" VerticalAlignment="Top" Click="Button_Click"/>
 
