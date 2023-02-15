@@ -22,6 +22,7 @@ namespace tic_tac_toe
         public Window2()
         {
             InitializeComponent();
+
         }
 
         private void Button_tictactoe_Click(object sender, RoutedEventArgs e)
@@ -30,6 +31,12 @@ namespace tic_tac_toe
             Page1 page1 = new Page1();
             this.Content = page1;
 
+        }
+
+        private void Button_movesquare_Click(object sender, RoutedEventArgs e)
+        {
+            Game2 game2 = new Game2();
+            this.Content = game2;
         }
     }
 }

@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Start Menu\games\Game2.xaml.cs">
+      <DependentUpon>Game2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
-    <Page Include="Start Menu\lower\Page1.xaml">
+    <Page Include="Start Menu\games\Game2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start Menu\games\Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>dd</CustomToolNamespace>
@@ -71,7 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Start Menu\lower\Page1.xaml.cs">
+    <Compile Include="Start Menu\games\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -119,6 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tic-tac-toe - project.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Start Menu\games\s0v1k3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="s0v1k3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
