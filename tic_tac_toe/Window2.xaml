@@ -20,6 +20,11 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="50,190,0,0" TextWrapping="Wrap" Text="tic-tac-toe" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="Button_movesquare" HorizontalAlignment="Left" Height="90" Margin="354,100,0,0" VerticalAlignment="Top" Width="90" Click="Button_movesquare_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="s0v1k3.jpg"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
