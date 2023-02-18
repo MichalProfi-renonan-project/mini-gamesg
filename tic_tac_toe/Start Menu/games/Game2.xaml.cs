@@ -68,7 +68,7 @@ namespace tic_tac_toe
         {
             InitializeComponent();
             Gamescreen.Focus();
-            GameTimer.Interval = TimeSpan.FromMilliseconds(20);
+            GameTimer.Interval = TimeSpan.FromMilliseconds(16);
             GameTimer.Tick += GameTick;
             GameTimer.Start();
         }
