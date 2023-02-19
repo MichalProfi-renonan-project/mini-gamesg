@@ -23,7 +23,7 @@ namespace tic_tac_toe
     {
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private bool UpKeyPressed, DownKeyPressed, LeftKeyPressed, RightKeyPressed;
-        private float Speedx, Speedy, Friction = 0.88f, Speed = 2;
+        private float Speed = 6;
         private void KeyBoardDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)
@@ -75,28 +75,22 @@ namespace tic_tac_toe
         
         private void GameTick(object sender, EventArgs e)
         {
-            if (UpKeyPressed)
+            if (LeftKeyPressed == true && Canvas.GetLeft(Player) > 0)
             {
-                Speedy += Speed;
+                Canvas.SetLeft(Player, Canvas.GetLeft(Player) - Speed);
             }
-            if (RightKeyPressed)
+            if (RightKeyPressed == true && Canvas.GetLeft(Player) + (Player.Width - 730) < Application.Current.MainWindow.Width)
             {
-                Speedx += Speed;
+                Canvas.SetLeft(Player, Canvas.GetLeft(Player) + Speed);
             }
-            if (LeftKeyPressed)
+            if (UpKeyPressed == true && Canvas.GetTop(Player) > 0)
             {
-                Speedx -= Speed;
+                Canvas.SetTop(Player, Canvas.GetTop(Player) - Speed);
             }
-            if (DownKeyPressed)
+            if (DownKeyPressed == true && Canvas.GetTop(Player) + (Player.Height - 350) < Application.Current.MainWindow.Height)
             {
-                Speedy -= Speed;
+                Canvas.SetTop(Player, Canvas.GetTop(Player) + Speed);
             }
-
-            Speedx = Speedx * Friction;
-            Speedy = Speedy * Friction;
-
-            Canvas.SetLeft(Player, Canvas.GetLeft(Player) + Speedx);
-            Canvas.SetTop(Player, Canvas.GetTop(Player) - Speedy);
         }
     }
 }
