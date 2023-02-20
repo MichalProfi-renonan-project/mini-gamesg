@@ -17,26 +17,41 @@ namespace tic_tac_toe
     /// <summary>
     /// Interaction logic for Window2.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class ChoosingGame : Window
     {
-        public Window2()
+        public ChoosingGame()
         {
             InitializeComponent();
+            
 
+        }
+        private void OnNavigateBackRequested(object sender, EventArgs e)
+        {
+            // Navigujte späť na Window
+            this.Content = new ChoosingGame();
         }
 
         private void Button_tictactoe_Click(object sender, RoutedEventArgs e)
         {
 
-            Page1 page1 = new Page1();
-            this.Content = page1;
+            this.Hide();
+            Tictactoe tictactoe = new Tictactoe();
+            tictactoe.Show();
 
         }
 
         private void Button_movesquare_Click(object sender, RoutedEventArgs e)
         {
-            Game2 game2 = new Game2();
-            this.Content = game2;
+            this.Hide();
+            MovinS0v1n sov = new MovinS0v1n();
+            sov.Show();
+        }
+
+        private void Button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow back = new MainWindow();
+            back.Show();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace tic_tac_toe
     /// <summary>
     /// Interaction logic for Game2.xaml
     /// </summary>
-    public partial class Game2 : Page
+    public partial class MovinS0v1n : Window
     {
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private bool UpKeyPressed, DownKeyPressed, LeftKeyPressed, RightKeyPressed;
@@ -44,6 +44,15 @@ namespace tic_tac_toe
             }
         }
 
+
+
+        private void Button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ChoosingGame back = new ChoosingGame();
+            back.Show();
+        }
+
         private void KeyBoardUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)
@@ -64,7 +73,7 @@ namespace tic_tac_toe
             }
         }
 
-        public Game2()
+        public MovinS0v1n()
         {
             InitializeComponent();
             Gamescreen.Focus();
@@ -72,7 +81,7 @@ namespace tic_tac_toe
             GameTimer.Tick += GameTick;
             GameTimer.Start();
         }
-        
+
         private void GameTick(object sender, EventArgs e)
         {
             if (LeftKeyPressed == true && Canvas.GetLeft(Player) > 0)

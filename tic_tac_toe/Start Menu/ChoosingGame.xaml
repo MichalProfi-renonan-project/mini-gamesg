@@ -1,18 +1,20 @@
-﻿<Window x:Class="tic_tac_toe.Window2"
+﻿<Window x:Class="tic_tac_toe.ChoosingGame"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tic_tac_toe"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
+        Title="ChoosingGame" Height="450" Width="800">
     <Grid>
+        
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="White" Offset="0"/>
                 <GradientStop Color="#FFF07E7E" Offset="0.812"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Frame x:Name="frame" />
         <TextBlock HorizontalAlignment="Left" Height="56" Margin="224,10,0,0" TextWrapping="Wrap" Text="CHOOSE YOUR GAME!" VerticalAlignment="Top" Width="328" FontSize="30"/>
         <Button x:Name="Button_tictactoe" HorizontalAlignment="Left" Height="90" Margin="50,100,0,0" VerticalAlignment="Top" Width="90" BorderBrush="Red" Click="Button_tictactoe_Click">
             <Button.Background>
@@ -25,6 +27,8 @@
                 <ImageBrush ImageSource="s0v1k3.jpg"/>
             </Button.Background>
         </Button>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="354,195,0,0" TextWrapping="Wrap" Text="MovinS0v1n" VerticalAlignment="Top" Width="136" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" Margin="32,369,0,0" VerticalAlignment="Top" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>

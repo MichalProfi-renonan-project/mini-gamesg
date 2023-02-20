@@ -25,17 +25,21 @@ namespace tic_tac_toe
         public MainWindow()
         {
             InitializeComponent();
-
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Window2 win = new Window2();
-            win.Show();
+            ChoosingGame choose = new ChoosingGame();
+            choose.Show();
 
          
         }
 
+        private void Button_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

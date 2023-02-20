@@ -18,12 +18,12 @@ namespace tic_tac_toe
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Tictactoe : Window
     {
         int playercounter = 1;
         int[] gridnumbers = new int[9];
 
-        public Page1()
+        public Tictactoe()
         {
             InitializeComponent();
 
@@ -34,11 +34,11 @@ namespace tic_tac_toe
         {
             if (WinChecker2(lbl1, lbl2, lbl3))
             {
-                if(playercounter % 2 == 0)
-                MessageBox.Show("cross wins");
+                if (playercounter % 2 == 0)
+                    MessageBox.Show("cross wins");
                 if (playercounter % 2 == 1)
                 {
-                MessageBox.Show("circle wins");
+                    MessageBox.Show("circle wins");
                 }
             }
             if (WinChecker2(lbl4, lbl5, lbl6))
@@ -104,14 +104,14 @@ namespace tic_tac_toe
                     MessageBox.Show("circle wins");
                 }
             }
-        } 
+        }
         private bool WinChecker2(Label lbl1, Label lbl2, Label lbl3)
         {
-            if (lbl1.Content != null && lbl2.Content != null && lbl3.Content != null   && lbl1.Content == lbl2.Content && lbl2.Content == lbl3.Content)
+            if (lbl1.Content != null && lbl2.Content != null && lbl3.Content != null && lbl1.Content == lbl2.Content && lbl2.Content == lbl3.Content)
             {
                 return true;
             }
-            else 
+            else
                 return false;
         }
         private void Butt1_Click(object sender, RoutedEventArgs e)
@@ -199,7 +199,7 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl4.Content = "O";
-                
+
                 playercounter++;
                 WinChecker1();
             }
@@ -221,14 +221,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl5.Content = "O";
-               
+
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl5.Content = "X";
-                
+
                 playercounter++;
                 WinChecker1();
             }
@@ -242,14 +242,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl6.Content = "O";
-                
+
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl6.Content = "X";
-                
+
                 playercounter++;
                 WinChecker1();
             }
@@ -265,14 +265,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl7.Content = "O";
-                
+
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl7.Content = "X";
-                
+
                 playercounter++;
                 WinChecker1();
             }
@@ -288,14 +288,14 @@ namespace tic_tac_toe
             {
                 lbl8.Content = "O";
                 WinChecker1();
-                
+
                 playercounter++;
             }
             else
             {
                 lbl8.Content = "X";
                 WinChecker1();
-                
+
                 playercounter++;
             }
 
@@ -312,14 +312,14 @@ namespace tic_tac_toe
             {
                 lbl9.Content = "O";
                 WinChecker1();
-                
+
                 playercounter++;
             }
             else
             {
                 lbl9.Content = "X";
                 WinChecker1();
-                
+
                 playercounter++;
             }
         }
