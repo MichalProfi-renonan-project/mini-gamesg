@@ -22,7 +22,8 @@ namespace tic_tac_toe
         public ChoosingGame()
         {
             InitializeComponent();
-            
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
 
         }
         private void OnNavigateBackRequested(object sender, EventArgs e)

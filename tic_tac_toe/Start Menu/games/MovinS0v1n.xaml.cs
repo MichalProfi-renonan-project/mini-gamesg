@@ -76,6 +76,8 @@ namespace tic_tac_toe
         public MovinS0v1n()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
             Gamescreen.Focus();
             GameTimer.Interval = TimeSpan.FromMilliseconds(16);
             GameTimer.Tick += GameTick;

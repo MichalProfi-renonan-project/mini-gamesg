@@ -20,13 +20,16 @@ namespace tic_tac_toe
     /// </summary>
     public partial class Tictactoe : Window
     {
+
+
         int playercounter = 1;
         int[] gridnumbers = new int[9];
 
         public Tictactoe()
         {
             InitializeComponent();
-
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
         }
         
         private void WinChecker1()
@@ -44,6 +47,7 @@ namespace tic_tac_toe
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
@@ -322,12 +326,37 @@ namespace tic_tac_toe
                 playercounter++;
             }
         }
+        private void resetgame()
+        {
+            lbl1.Content = null;
+            lbl2.Content = null;
+            lbl3.Content = null;
+            lbl4.Content = null;
+            lbl5.Content = null;
+            lbl6.Content = null;
+            lbl7.Content = null;
+            lbl8.Content= null;
+            lbl9.Content = null;
+        }
 
-        private void Button_backd_Click(object sender, RoutedEventArgs e)
+            private void Button_backd_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             ChoosingGame back = new ChoosingGame();
             back.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            lbl1.Content = null;
+            lbl2.Content = null;
+            lbl3.Content = null;
+            lbl4.Content = null;
+            lbl5.Content = null;
+            lbl6.Content = null;
+            lbl7.Content = null;
+            lbl8.Content = null;
+            lbl9.Content = null;
         }
     }
 }

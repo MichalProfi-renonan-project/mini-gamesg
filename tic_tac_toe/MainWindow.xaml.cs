@@ -25,7 +25,8 @@ namespace tic_tac_toe
         public MainWindow()
         {
             InitializeComponent();
-            
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
