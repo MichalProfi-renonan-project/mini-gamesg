@@ -27,9 +27,8 @@ namespace tic_tac_toe
         {
             InitializeComponent();
 
-
-
         }
+        
         private void WinChecker1()
         {
             if (WinChecker2(lbl1, lbl2, lbl3))
@@ -322,6 +321,13 @@ namespace tic_tac_toe
 
                 playercounter++;
             }
+        }
+
+        private void Button_backd_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ChoosingGame back = new ChoosingGame();
+            back.Show();
         }
     }
 }
