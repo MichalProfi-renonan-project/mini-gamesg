@@ -40,7 +40,7 @@ namespace tic_tac_toe
 
         private void Button_exit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            App.Current.Shutdown();
         }
     }
 }

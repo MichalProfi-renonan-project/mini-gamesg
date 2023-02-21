@@ -90,7 +90,7 @@ namespace tic_tac_toe
             {
                 Canvas.SetLeft(Player, Canvas.GetLeft(Player) - Speed);
             }
-            if (RightKeyPressed == true && Canvas.GetLeft(Player) + (Player.Width - 730) < Application.Current.MainWindow.Width)
+            if (RightKeyPressed == true && Canvas.GetLeft(Player) + (Player.Width + 20) < Application.Current.MainWindow.Width)
             {
                 Canvas.SetLeft(Player, Canvas.GetLeft(Player) + Speed);
             }
@@ -98,7 +98,7 @@ namespace tic_tac_toe
             {
                 Canvas.SetTop(Player, Canvas.GetTop(Player) - Speed);
             }
-            if (DownKeyPressed == true && Canvas.GetTop(Player) + (Player.Height - 350) < Application.Current.MainWindow.Height)
+            if (DownKeyPressed == true && Canvas.GetTop(Player) + (Player.Height + 10) < Application.Current.MainWindow.Height)
             {
                 Canvas.SetTop(Player, Canvas.GetTop(Player) + Speed);
             }
