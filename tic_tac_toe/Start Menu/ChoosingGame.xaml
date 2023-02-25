@@ -18,13 +18,13 @@
         <TextBlock HorizontalAlignment="Left" Height="56" Margin="224,10,0,0" TextWrapping="Wrap" Text="CHOOSE YOUR GAME!" VerticalAlignment="Top" Width="328" FontSize="30"/>
         <Button x:Name="Button_tictactoe" HorizontalAlignment="Left" Height="90" Margin="50,100,0,0" VerticalAlignment="Top" Width="90" BorderBrush="Red" Click="Button_tictactoe_Click">
             <Button.Background>
-                <ImageBrush TileMode="FlipX" ImageSource="tic-tac-toe - project.jpg"/>
+                <ImageBrush ImageSource="../Pictures/tic-tac-toe - project.jpg"/>
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="50,190,0,0" TextWrapping="Wrap" Text="tic-tac-toe" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
         <Button x:Name="Button_movesquare" HorizontalAlignment="Left" Height="90" Margin="354,100,0,0" VerticalAlignment="Top" Width="90" Click="Button_movesquare_Click">
             <Button.Background>
-                <ImageBrush ImageSource="s0v1k3.jpg"/>
+                <ImageBrush ImageSource="../Pictures/s0v1k3.jpg"/>
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="354,195,0,0" TextWrapping="Wrap" Text="MovinS0v1n" VerticalAlignment="Top" Width="136" FontSize="16" FontWeight="Bold"/>

@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tic_tac_toe"
         mc:Ignorable="d"
-          Title="MainWindow" Height="450" Width="800">
+          Title="MainWindow" Height="450" Width="800" WindowStyle="None" MouseDown="Window_MouseDown">
 
     <Grid Background="Red" OpacityMask="Black">
-        <Button Content="Start" Width="440" Height="51" Margin="177,46,176.4,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button x:Name="Button_exit" Content="Exit" HorizontalAlignment="Center" Height="51" Margin="177,122,176.4,0" VerticalAlignment="Top"  Width="440" Click="Button_exit_Click"/>
+        <Button Content="Start" Width="440" Height="51" Margin="177,106,176.6,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="Button_exit" Content="Exit" HorizontalAlignment="Center" Height="51" Margin="177,178,176.6,0" VerticalAlignment="Top"  Width="440" Click="Button_exit_Click"/>
+        <Button x:Name="Button_Maximize" Content="" HorizontalAlignment="Right" Height="30" Margin="690,28,50,0" VerticalAlignment="Top" Width="30" Click="Button_Maximize_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Pictures/exitfullscreen.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Button_Minimize" Content="" HorizontalAlignment="Right" Height="30" Margin="595,28,100,0" VerticalAlignment="Top" Width="30" Click="Button_Minimize_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Pictures/Minimize.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

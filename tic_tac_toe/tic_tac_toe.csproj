@@ -131,21 +131,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="Minigames - project.jpg">
+    <SplashScreen Include="Pictures\Minigames - project.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </SplashScreen>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Start Menu\tic-tac-toe - project.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="tic-tac-toe - project.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Start Menu\games\s0v1k3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="s0v1k3.jpg" />
+    <Resource Include="Pictures\tic-tac-toe - project.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -160,7 +151,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Start Menu\s0v1k3.jpg" />
+    <Resource Include="Pictures\exitfullscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\s0v1k3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Minimize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
