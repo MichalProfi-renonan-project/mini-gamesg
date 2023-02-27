@@ -151,13 +151,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\exitfullscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Pictures\s0v1k3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\maximizeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Minimizeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Closeicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

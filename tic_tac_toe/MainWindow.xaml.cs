@@ -66,5 +66,11 @@ namespace tic_tac_toe
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void Button_Close_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
     }
 }

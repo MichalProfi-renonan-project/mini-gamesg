@@ -54,5 +54,33 @@ namespace tic_tac_toe
             MainWindow back = new MainWindow();
             back.Show();
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void Button_Maximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+            else if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+
+        }
+
+        private void Button_Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Button_Close_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
     }
 }
