@@ -26,11 +26,6 @@ namespace tic_tac_toe
             WindowStyle = WindowStyle.None;
 
         }
-        private void OnNavigateBackRequested(object sender, EventArgs e)
-        {
-            // Navigujte späť na Window
-            this.Content = new ChoosingGame();
-        }
 
         private void Button_tictactoe_Click(object sender, RoutedEventArgs e)
         {
@@ -82,5 +77,11 @@ namespace tic_tac_toe
             App.Current.Shutdown();
         }
 
+        private void Button_Snake_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Snake snake = new Snake();
+            snake.Show();
+        }
     }
 }

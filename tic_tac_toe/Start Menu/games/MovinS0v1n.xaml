@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:tic_tac_toe"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MovinS0v1n" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True">
+      Title="MovinS0v1n" WindowStyle="None" AllowsTransparency="True">
 
     <Grid Background="#FF5450FF" OpacityMask="Black">
 
@@ -16,25 +16,8 @@
                     <ImageBrush ImageSource="../../Pictures/s0v1k3.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" Margin="32,369,0,0" VerticalAlignment="Top" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold"/>
-            <TextBlock Height="56" Canvas.Left="176" TextWrapping="Wrap" Text="Move S0v1n with W A S D" Canvas.Top="26" Width="484" FontSize="36" FontWeight="Bold"/>
         </Canvas>
-        <Button x:Name="Button_Maximize" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="30" Margin="690,5,55,0" VerticalAlignment="Top" Width="30" Click="Button_Maximize_Click">
-            <StackPanel>
-                <Image Source="../../Pictures/maximizeicon.png"/>
-            </StackPanel>
-        </Button>
-
-        <Button x:Name="Button_Minimize" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="30" Margin="595,5,85,0" VerticalAlignment="Top" Width="30" Click="Button_Minimize_Click">
-            <StackPanel>
-                <Image Source="../../Pictures/Minimizeicon.png"/>
-            </StackPanel>
-        </Button>
-
-        <Button x:Name="Button_Close" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="30" Margin="700,5,5,0" VerticalAlignment="Top" Width="50" Click="Button_Close_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="../../Pictures/Closeicon.png"/>
-            </StackPanel>
-        </Button>
+        <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" Margin="32,400,0,20" VerticalAlignment="Bottom" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Height="56" Canvas.Left="176" TextWrapping="Wrap" Text="Move S0v1n with W A S D" Canvas.Top="26" Width="484" FontSize="36" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </Window>
