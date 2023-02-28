@@ -76,12 +76,5 @@ namespace tic_tac_toe
         {
             App.Current.Shutdown();
         }
-
-        private void Button_Snake_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            Snake snake = new Snake();
-            snake.Show();
-        }
     }
 }
