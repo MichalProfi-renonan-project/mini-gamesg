@@ -76,6 +76,9 @@
     <Compile Include="Start Menu\games\MovinS0v1n.xaml.cs">
       <DependentUpon>MovinS0v1n.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Start Menu\games\SnakeGame.xaml.cs">
+      <DependentUpon>SnakeGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Start Menu\games\Tictactoe.xaml.cs">
       <DependentUpon>Tictactoe.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Start Menu\games\MovinS0v1n.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start Menu\games\SnakeGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\Closeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Hadik.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

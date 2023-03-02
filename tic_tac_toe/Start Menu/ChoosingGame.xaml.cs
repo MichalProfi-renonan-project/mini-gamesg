@@ -76,5 +76,12 @@ namespace tic_tac_toe
         {
             App.Current.Shutdown();
         }
+
+        private void Button_hadik_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SnakeGame snkGame = new SnakeGame();
+            snkGame.Show();
+        }
     }
 }
