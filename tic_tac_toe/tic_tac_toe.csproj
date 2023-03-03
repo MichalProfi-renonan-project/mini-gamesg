@@ -76,6 +76,7 @@
     <Compile Include="Start Menu\games\MovinS0v1n.xaml.cs">
       <DependentUpon>MovinS0v1n.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Start Menu\games\SnakeElement.cs" />
     <Compile Include="Start Menu\games\SnakeGame.xaml.cs">
       <DependentUpon>SnakeGame.xaml</DependentUpon>
     </Compile>
