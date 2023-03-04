@@ -24,12 +24,16 @@ namespace tic_tac_toe
 
         int playercounter = 1;
         int[] gridnumbers = new int[9];
+        int Winscircle = 0;
+        int Winscross = 0;
+
 
         public Tictactoe()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
+            lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
         }
         
         private void WinChecker1()
@@ -38,76 +42,124 @@ namespace tic_tac_toe
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl4, lbl5, lbl6))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
-                    
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl7, lbl8, lbl9))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl1, lbl4, lbl7))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl2, lbl5, lbl8))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl3, lbl6, lbl9))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl1, lbl5, lbl9))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
             if (WinChecker2(lbl3, lbl5, lbl7))
             {
                 if (playercounter % 2 == 0)
                     MessageBox.Show("cross wins");
+                    resetgame();
+                    Winscross++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 if (playercounter % 2 == 1)
                 {
                     MessageBox.Show("circle wins");
+                    resetgame();
+                    Winscircle++;
+                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
                 }
             }
         }
+        
         private bool WinChecker2(Label lbl1, Label lbl2, Label lbl3)
         {
             if (lbl1.Content != null && lbl2.Content != null && lbl3.Content != null && lbl1.Content == lbl2.Content && lbl2.Content == lbl3.Content)
