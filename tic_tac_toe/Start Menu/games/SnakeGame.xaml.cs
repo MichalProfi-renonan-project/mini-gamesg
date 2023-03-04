@@ -35,6 +35,7 @@ namespace tic_tac_toe
             DrawGameWorld();
             InitializeSnake();
             DrawSnake();
+            this.KeyDown += KeyRealised;
         }
 
         private void DrawSnake()
@@ -107,16 +108,16 @@ namespace tic_tac_toe
                 switch (_currentDirection)
                 {
                     case Direction.Right:
-                        snakeElement.X -= _elementSize;
-                        break;
-                    case Direction.Left:
                         snakeElement.X += _elementSize;
                         break;
+                    case Direction.Left:
+                        snakeElement.X -= _elementSize;
+                        break;
                     case Direction.Up:
-                        snakeElement.Y += _elementSize;
+                        snakeElement.Y -= _elementSize;
                         break;
                     case Direction.Down:
-                        snakeElement.Y -= _elementSize;
+                        snakeElement.Y += _elementSize;
                         break;
 
                 }
