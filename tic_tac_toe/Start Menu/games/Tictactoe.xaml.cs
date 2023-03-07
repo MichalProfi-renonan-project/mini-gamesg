@@ -38,6 +38,10 @@ namespace tic_tac_toe
         
         private void WinChecker1()
         {
+            if (playercounter == 9)
+            {
+                resetgame();
+            }
             if (WinChecker2(lbl1, lbl2, lbl3))
             {
                 if (playercounter % 2 == 0)
@@ -389,6 +393,7 @@ namespace tic_tac_toe
             lbl7.Content = null;
             lbl8.Content= null;
             lbl9.Content = null;
+            playercounter = 1;
         }
 
             private void Button_backd_Click(object sender, RoutedEventArgs e)
@@ -396,19 +401,7 @@ namespace tic_tac_toe
             this.Close();
             ChoosingGame back = new ChoosingGame();
             back.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            lbl1.Content = null;
-            lbl2.Content = null;
-            lbl3.Content = null;
-            lbl4.Content = null;
-            lbl5.Content = null;
-            lbl6.Content = null;
-            lbl7.Content = null;
-            lbl8.Content = null;
-            lbl9.Content = null;
+        
         }
     }
 }

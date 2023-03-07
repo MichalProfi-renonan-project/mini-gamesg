@@ -9,6 +9,12 @@
       Title="Page1" WindowStyle="None">
 
     <Grid Margin="10,50,10,10">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="Green" Offset="0"/>
+                <GradientStop Color="Yellow" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
@@ -19,32 +25,32 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Button x:Name="butt1" Click="Butt1_Click" >
+        <Button x:Name="butt1" Click="Butt1_Click" Background="Transparent">
             <Label x:Name="lbl1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
         </Button>
 
-        <Button Grid.Column="1" x:Name="butt2" Click="butt2_Click"></Button>
+        <Button Grid.Column="1" x:Name="butt2" Click="butt2_Click" Background="Transparent"></Button>
         <Label Grid.Column="1" x:Name="lbl2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Column="2" x:Name="butt3" Click="butt3_Click"></Button>
+        <Button Grid.Column="2" x:Name="butt3" Click="butt3_Click" Background="Transparent" ></Button>
         <Label Grid.Column="2" x:Name="lbl3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Row="1" x:Name="butt4" Click="butt4_Click"></Button>
+        <Button Grid.Row="1" x:Name="butt4" Click="butt4_Click" Background="Transparent" ></Button>
         <Label Grid.Row="1" x:Name="lbl4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Column="1" Grid.Row="1" x:Name="butt5" Click="butt5_Click"></Button>
+        <Button Grid.Column="1" Grid.Row="1" x:Name="butt5" Click="butt5_Click" Background="Transparent" ></Button>
         <Label Grid.Column="1" Grid.Row="1" x:Name="lbl5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Column="2" Grid.Row="1" x:Name="butt6" Click="butt6_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="1" x:Name="butt6" Click="butt6_Click" Background="Transparent" ></Button>
         <Label Grid.Column="2" Grid.Row="1" x:Name="lbl6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Row="2" x:Name="butt7" Click="butt7_Click"></Button>
+        <Button Grid.Row="2" x:Name="butt7" Click="butt7_Click" Background="Transparent"></Button>
         <Label Grid.Row="2" x:Name="lbl7" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Column="1" Grid.Row="2" x:Name="butt8" Click="butt8_Click"></Button>
+        <Button Grid.Column="1" Grid.Row="2" x:Name="butt8" Click="butt8_Click" Background="Transparent"></Button>
         <Label Grid.Column="1" Grid.Row="2" x:Name="lbl8" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
 
-        <Button Grid.Column="2" Grid.Row="2" x:Name="butt9" Click="butt9_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="2" x:Name="butt9" Click="butt9_Click" Background="Transparent"></Button>
         <Label Grid.Column="2" Grid.Row="2" x:Name="lbl9" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
         <Button x:Name="Button_backd" Content="Back" HorizontalAlignment="Left" Height="27" Margin="0,-45,0,0" VerticalAlignment="Top" Width="64" Click="Button_backd_Click" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblcounter" Grid.Column="2" Content="" HorizontalAlignment="Left" Height="35" Margin="169,-43,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.5,0.5" FontSize="18">
