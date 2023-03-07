@@ -27,6 +27,9 @@ namespace tic_tac_toe
         int Winscircle = 0;
         int Winscross = 0;
 
+        List<Button> buttons = new List<Button>();
+        
+        public static List<Label> labels = new List<Label>();
 
         public Tictactoe()
         {
@@ -168,6 +171,9 @@ namespace tic_tac_toe
         {
             if (lbl1.Content != null && lbl2.Content != null && lbl3.Content != null && lbl1.Content == lbl2.Content && lbl2.Content == lbl3.Content)
             {
+                lbl1.Foreground = Brushes.Gold;
+                lbl2.Foreground = Brushes.Gold;
+                lbl3.Foreground = Brushes.Gold;
                 return true;
             }
             else
@@ -183,12 +189,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl1.Content = "O";
+                butt1.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl1.Content = "X";
+                butt1.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
@@ -208,6 +216,7 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl2.Content = "O";
+                butt2.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
 
@@ -215,6 +224,7 @@ namespace tic_tac_toe
             else
             {
                 lbl2.Content = "X";
+                butt2.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
@@ -233,6 +243,7 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl3.Content = "O";
+                butt3.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
 
@@ -240,6 +251,7 @@ namespace tic_tac_toe
             else
             {
                 lbl3.Content = "X";
+                butt3.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
@@ -258,14 +270,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl4.Content = "O";
-
+                butt4.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl4.Content = "X";
-                ;
+                butt4.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
@@ -280,14 +292,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl5.Content = "O";
-
+                butt5.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl5.Content = "X";
-
+                butt5.Background = Brushes.White; 
                 playercounter++;
                 WinChecker1();
             }
@@ -301,14 +313,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl6.Content = "O";
-
+                butt6.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl6.Content = "X";
-
+                butt6.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
@@ -324,14 +336,14 @@ namespace tic_tac_toe
             else if (playercounter % 2 == 0)
             {
                 lbl7.Content = "O";
-
+                butt7.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
             else
             {
                 lbl7.Content = "X";
-
+                butt7.Background = Brushes.White;
                 playercounter++;
                 WinChecker1();
             }
@@ -347,14 +359,14 @@ namespace tic_tac_toe
             {
                 lbl8.Content = "O";
                 WinChecker1();
-
+                butt8.Background = Brushes.White;
                 playercounter++;
             }
             else
             {
                 lbl8.Content = "X";
                 WinChecker1();
-
+                butt8.Background = Brushes.White;
                 playercounter++;
             }
 
@@ -371,19 +383,38 @@ namespace tic_tac_toe
             {
                 lbl9.Content = "O";
                 WinChecker1();
-
+                butt9.Background = Brushes.White;
                 playercounter++;
             }
             else
             {
                 lbl9.Content = "X";
                 WinChecker1();
-
+                butt9.Background = Brushes.White;
                 playercounter++;
             }
         }
+        
         private void resetgame()
         {
+            butt1.Background = Brushes.Transparent;
+            butt2.Background = Brushes.Transparent;
+            butt3.Background = Brushes.Transparent;
+            butt4.Background = Brushes.Transparent;
+            butt5.Background = Brushes.Transparent;
+            butt6.Background = Brushes.Transparent;
+            butt7.Background = Brushes.Transparent;
+            butt8.Background = Brushes.Transparent;
+            butt9.Background = Brushes.Transparent;
+            lbl1.Foreground = Brushes.Black;
+            lbl2.Foreground = Brushes.Black;
+            lbl3.Foreground = Brushes.Black;
+            lbl4.Foreground = Brushes.Black;
+            lbl5.Foreground = Brushes.Black;
+            lbl6.Foreground = Brushes.Black;
+            lbl7.Foreground = Brushes.Black;
+            lbl8.Foreground = Brushes.Black;
+            lbl9.Foreground = Brushes.Black;
             lbl1.Content = null;
             lbl2.Content = null;
             lbl3.Content = null;
