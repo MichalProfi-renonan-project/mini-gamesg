@@ -28,8 +28,6 @@ namespace tic_tac_toe
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            Button_Close.MouseEnter += Button_Close_MouseEnter;
-            Button_Close.MouseLeave += Button_Close_MouseLeave;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

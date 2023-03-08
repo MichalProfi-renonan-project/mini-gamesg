@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:tic_tac_toe"
         mc:Ignorable="d"
         Title="SnakeGame" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
-    <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="Gray"/>
+    <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="White"/>
 </Window>

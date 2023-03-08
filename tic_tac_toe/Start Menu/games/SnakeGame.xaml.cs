@@ -26,8 +26,11 @@ namespace tic_tac_toe
 
         DispatcherTimer _gameLoopTimer;
         List<SnakeElement> _snakeElements;
-        
+
         private Direction _currentDirection;
+        private double _gameWidth;
+        private double _gameHeight;
+
         public SnakeGame()
         {
             InitializeComponent();
@@ -56,15 +59,18 @@ namespace tic_tac_toe
             _snakeElements.Add(new SnakeElement(_elementSize)
             {
                 X = (_numberOfRows / 2) * _elementSize,
-                Y = (_numberOfColumns / 2) * _elementSize
+                Y = (_numberOfColumns / 2) * _elementSize,
+                IsHead = true
             });
             _currentDirection = Direction.Left;
         }
 
         private void DrawGameWorld()
         {
-            _numberOfColumns = (int) this.Width / _elementSize;
-            _numberOfRows = (int) this.Height / _elementSize;
+            _gameWidth = Width;
+            _gameHeight = Height;
+            _numberOfColumns = (int)_gameWidth / _elementSize;
+            _numberOfRows = (int)_gameHeight / _elementSize;
 
             for (int i = 0; i < _numberOfRows; i++)
             {
@@ -72,7 +78,7 @@ namespace tic_tac_toe
                 line.Stroke = Brushes.Black;
                 line.X1 = 0;
                 line.Y1 = i * _elementSize;
-                line.X2 = Width;
+                line.X2 = _gameWidth;
                 line.Y2 = i * _elementSize;
                 GameWorld.Children.Add(line);
             }
@@ -83,7 +89,7 @@ namespace tic_tac_toe
                 line.X1 = i * _elementSize;
                 line.Y1 = 0;
                 line.X2 = i * _elementSize;
-                line.Y2 = Height;
+                line.Y2 = _gameHeight;
                 GameWorld.Children.Add(line);
             }
         }
@@ -91,7 +97,7 @@ namespace tic_tac_toe
         public void InitializeTimer()
         {
             _gameLoopTimer = new DispatcherTimer();
-            _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.5);
+            _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.2);
             _gameLoopTimer.Tick += MainGameLoop;
             _gameLoopTimer.Start();
         }
@@ -99,8 +105,39 @@ namespace tic_tac_toe
         private void MainGameLoop(object sender, EventArgs e)
         {
             MoveSnake();
+            CheckCollision();
             DrawSnake();
         }
+
+        private void CheckCollision()
+        {
+            CheckCollisionWithWorldBounds();
+            CheckCollisionWithSelf();
+            CheckCollisionWithWorldItems();
+        }
+
+        private void CheckCollisionWithWorldItems()
+        {
+            foreach (var snakeElement in _snakeElements)
+                if (snakeElement.IsHead)
+                {
+                    if (snakeElement.X > _gameWidth || snakeElement.X < 0 || snakeElement.Y < 0 || snakeElement.Y > _gameHeight)
+                    {
+                        MessageBox.Show("Game Over collided with bounds!");
+                    }
+                }
+        }
+
+        private void CheckCollisionWithSelf()
+        {
+
+        }
+
+        private void CheckCollisionWithWorldBounds()
+        {
+
+        }
+
         private void MoveSnake()
         {
             foreach (var snakeElement in _snakeElements)
@@ -122,7 +159,7 @@ namespace tic_tac_toe
 
                 }
 
-                
+
             }
 
         }
@@ -146,7 +183,8 @@ namespace tic_tac_toe
             }
         }
     }
-    enum Direction{
+    enum Direction
+    {
         Right,
         Left,
         Up,
