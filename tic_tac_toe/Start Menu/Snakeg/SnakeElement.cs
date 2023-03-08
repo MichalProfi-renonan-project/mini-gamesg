@@ -9,9 +9,12 @@ using System.Windows.Media;
 
 namespace tic_tac_toe
 {
-    class SnakeElement
+    class SnakeElement : GameEntity
     {
-        public SnakeElement(int Size)
+
+     
+        
+       public SnakeElement(int Size) : base(Size)
         {
             Rectangle rect = new Rectangle();
             rect.Width = Size;
@@ -20,10 +23,7 @@ namespace tic_tac_toe
             UIElement = rect;
         }
         
-        public UIElement UIElement { get; set; }
         public bool IsHead { get; set; }
 
-        public int X { get; set; }
-        public int Y { get; set; }
     }
 }

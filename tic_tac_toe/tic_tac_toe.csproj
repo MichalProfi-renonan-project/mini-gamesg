@@ -76,8 +76,10 @@
     <Compile Include="Start Menu\games\MovinS0v1n.xaml.cs">
       <DependentUpon>MovinS0v1n.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Start Menu\games\SnakeElement.cs" />
-    <Compile Include="Start Menu\games\SnakeGame.xaml.cs">
+    <Compile Include="Start Menu\Snakeg\Food.cs" />
+    <Compile Include="Start Menu\Snakeg\GameEntity.cs" />
+    <Compile Include="Start Menu\Snakeg\SnakeElement.cs" />
+    <Compile Include="Start Menu\Snakeg\SnakeGame.xaml.cs">
       <DependentUpon>SnakeGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Start Menu\games\Tictactoe.xaml.cs">
@@ -103,7 +105,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Start Menu\games\SnakeGame.xaml">
+    <Page Include="Start Menu\Snakeg\SnakeGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

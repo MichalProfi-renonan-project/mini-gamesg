@@ -118,19 +118,43 @@ namespace tic_tac_toe
 
         private void CheckCollisionWithWorldItems()
         {
-            foreach (var snakeElement in _snakeElements)
-                if (snakeElement.IsHead)
-                {
-                    if (snakeElement.X > _gameWidth || snakeElement.X < 0 || snakeElement.Y < 0 || snakeElement.Y > _gameHeight)
-                    {
-                        MessageBox.Show("Game Over collided with bounds!");
-                    }
-                }
+            SnakeElement snakeHead = GetSnakeHead();
+            if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
+            {
+                MessageBox.Show("Game Over collided with bounds!");
+            }  
         }
 
         private void CheckCollisionWithSelf()
         {
-
+            SnakeElement snakeHead = GetSnakeHead();
+            if (snakeHead != null)
+            {
+                foreach (var snakeElement in _snakeElements)
+                {
+                    if (!snakeElement.IsHead)
+                    {
+                        if (snakeElement.X == snakeHead.X && snakeElement.Y == snakeHead.Y)
+                        {
+                            MessageBox.Show("Game Over collided with bounds!");
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        private SnakeElement GetSnakeHead()
+        {
+            SnakeElement snakeHead = null;
+            foreach (var snakeElement in _snakeElements)
+            {
+                if (snakeElement.IsHead)
+                {
+                    snakeHead = snakeElement;
+                    break;
+                }
+            }
+            return snakeHead;
         }
 
         private void CheckCollisionWithWorldBounds()
