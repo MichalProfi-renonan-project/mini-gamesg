@@ -18,5 +18,19 @@ namespace tic_tac_toe
             rect.Fill = Brushes.Red;
             UIElement = rect;
         }
+
+        public override bool Equals(object obj)
+        {
+            Food food = obj as Food;
+            if(food != null)
+            {
+                return X == food.X && Y == food.Y;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

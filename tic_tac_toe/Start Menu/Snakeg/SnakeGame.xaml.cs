@@ -33,7 +33,8 @@ namespace tic_tac_toe
         private double _gameWidth;
         private double _gameHeight;
         private long _elapsedTicks;
-        
+        private SnakeElement _tailBackup;
+
         public SnakeGame()
         {
             InitializeComponent();
@@ -63,11 +64,11 @@ namespace tic_tac_toe
             _snakeElements = new List<SnakeElement>();
             _snakeElements.Add(new SnakeElement(_elementSize)
             {
-                X = (_numberOfRows / 2) * _elementSize,
-                Y = (_numberOfColumns / 2) * _elementSize,
+                X = (_numberOfColumns / 2) * _elementSize,
+                Y = (_numberOfRows / 2) * _elementSize,
                 IsHead = true
-            });
-            _currentDirection = Direction.Left;
+            });           
+            _currentDirection = Direction.Right;
         }
 
         private void DrawGameWorld()
@@ -114,6 +115,7 @@ namespace tic_tac_toe
             DrawSnake();
             CreateFood();
             DrawFoods();
+            _elapsedTicks++;
         }
 
         private void DrawFoods()
@@ -130,7 +132,7 @@ namespace tic_tac_toe
 
         private void CreateFood()
         {
-            if(_elapsedTicks / 13 == 0)
+            if(_elapsedTicks % 17 == 0)
             {
                 _foods.Add(new Food(_elementSize) {
                     X = _randoTron.Next(0, _numberOfColumns) * _elementSize,
@@ -148,11 +150,28 @@ namespace tic_tac_toe
 
         private void CheckCollisionWithWorldItems()
         {
-            SnakeElement snakeHead = GetSnakeHead();
-            if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
+            SnakeElement head = _snakeElements[0];
+            Food collidedWithSnake = null;
+            foreach (var food in _foods)
             {
-                MessageBox.Show("Game Over collided with bounds!");
-            }  
+                if(head.X == food.X && head.Y == food.Y)
+                {
+                    collidedWithSnake = food;
+                    break;
+                }
+            }
+            if(collidedWithSnake != null)
+            {
+                _foods.Remove(collidedWithSnake);
+                GameWorld.Children.Remove(collidedWithSnake.UIElement);
+                GrowSnake();
+            }
+            
+        }
+
+        private void GrowSnake()
+        {
+            _snakeElements.Add(new SnakeElement(_elementSize) { X = _tailBackup.X, Y = _tailBackup.Y });
         }
 
         private void CheckCollisionWithSelf()
@@ -189,32 +208,47 @@ namespace tic_tac_toe
 
         private void CheckCollisionWithWorldBounds()
         {
-
+            SnakeElement snakeHead = GetSnakeHead();
+            if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
+            {
+                MessageBox.Show("Game Over collided with bounds!");
+            }
         }
 
         private void MoveSnake()
         {
-            foreach (var snakeElement in _snakeElements)
+            SnakeElement head = _snakeElements[0];
+            SnakeElement tail = _snakeElements[_snakeElements.Count - 1];
+   
+            _tailBackup = new SnakeElement(_elementSize)
             {
-                switch (_currentDirection)
-                {
-                    case Direction.Right:
-                        snakeElement.X += _elementSize;
-                        break;
-                    case Direction.Left:
-                        snakeElement.X -= _elementSize;
-                        break;
-                    case Direction.Up:
-                        snakeElement.Y -= _elementSize;
-                        break;
-                    case Direction.Down:
-                        snakeElement.Y += _elementSize;
-                        break;
+                X = tail.X,
+                Y = tail.Y
+            };
 
-                }
+            head.IsHead = false;
+            tail.IsHead = true;
+            tail.X = head.X;
+            tail.Y = head.Y;
 
+            switch (_currentDirection)
+            {
+                case Direction.Right:
+                    tail.X += _elementSize;
+                    break;
+                case Direction.Left:
+                    tail.X -= _elementSize;
+                    break;
+                case Direction.Up:
+                    tail.Y -= _elementSize;
+                    break;
+                case Direction.Down:
+                    tail.Y += _elementSize;
+                    break;
 
             }
+            _snakeElements.RemoveAt(_snakeElements.Count - 1);
+            _snakeElements.Insert(0, tail);
 
         }
 
