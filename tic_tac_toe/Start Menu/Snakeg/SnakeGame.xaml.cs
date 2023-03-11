@@ -48,13 +48,13 @@ namespace tic_tac_toe
 
         private void DrawSnake()
         {
-            foreach (var food in _foods)
+            foreach (var snakeElement in _snakeElements)
             {
-                if (!GameWorld.Children.Contains(food.UIElement))
-                    GameWorld.Children.Add(food.UIElement);
+                if (!GameWorld.Children.Contains(snakeElement.UIElement))
+                    GameWorld.Children.Add(snakeElement.UIElement);
 
-                Canvas.SetLeft(food.UIElement, food.X);
-                Canvas.SetTop(food.UIElement, food.Y);
+                Canvas.SetLeft(snakeElement.UIElement, snakeElement.X);
+                Canvas.SetTop(snakeElement.UIElement, snakeElement.Y);
             }
         }
 
@@ -118,13 +118,13 @@ namespace tic_tac_toe
 
         private void DrawFoods()
         {
-            foreach (var snakeElement in _snakeElements)
+            foreach (var food in _foods)
             {
-                if (!GameWorld.Children.Contains(snakeElement.UIElement))
-                    GameWorld.Children.Add(snakeElement.UIElement);
+                if (!GameWorld.Children.Contains(food.UIElement))
+                    GameWorld.Children.Add(food.UIElement);
 
-                Canvas.SetLeft(snakeElement.UIElement, snakeElement.X);
-                Canvas.SetTop(snakeElement.UIElement, snakeElement.Y);
+                Canvas.SetLeft(food.UIElement, food.X);
+                Canvas.SetTop(food.UIElement, food.Y);
             }
         }
 
