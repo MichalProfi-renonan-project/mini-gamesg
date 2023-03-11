@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media;
+using System.Windows;
 using System.Windows.Shapes;
+using System.Windows.Media;
 
 namespace tic_tac_toe
 {
-    class Food : GameEntity
+    class SnakeElement : GameEntity
     {
-        public Food(int Size) : base(Size)
+   
+       public SnakeElement(int size)
         {
             Rectangle rect = new Rectangle();
-            rect.Width = Size;
-            rect.Height = Size;
+            rect.Width = size;
+            rect.Height = size;
             rect.Fill = Brushes.Green;
             UIElement = rect;
         }
+        
+        public bool IsHead { get; set; }
+
     }
 }

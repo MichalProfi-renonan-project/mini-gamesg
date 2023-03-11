@@ -26,14 +26,19 @@ namespace tic_tac_toe
 
         DispatcherTimer _gameLoopTimer;
         List<SnakeElement> _snakeElements;
+        List<Food> _foods; 
+        private Random _randoTron;
 
         private Direction _currentDirection;
         private double _gameWidth;
         private double _gameHeight;
-
+        private long _elapsedTicks;
+        
         public SnakeGame()
         {
             InitializeComponent();
+            _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
+            _foods = new List<Food>();
             InitializeTimer();
             DrawGameWorld();
             InitializeSnake();
@@ -43,13 +48,13 @@ namespace tic_tac_toe
 
         private void DrawSnake()
         {
-            foreach (var snakeElement in _snakeElements)
+            foreach (var food in _foods)
             {
-                if (!GameWorld.Children.Contains(snakeElement.UIElement))
-                    GameWorld.Children.Add(snakeElement.UIElement);
+                if (!GameWorld.Children.Contains(food.UIElement))
+                    GameWorld.Children.Add(food.UIElement);
 
-                Canvas.SetLeft(snakeElement.UIElement, snakeElement.X);
-                Canvas.SetTop(snakeElement.UIElement, snakeElement.Y);
+                Canvas.SetLeft(food.UIElement, food.X);
+                Canvas.SetTop(food.UIElement, food.Y);
             }
         }
 
@@ -107,6 +112,31 @@ namespace tic_tac_toe
             MoveSnake();
             CheckCollision();
             DrawSnake();
+            CreateFood();
+            DrawFoods();
+        }
+
+        private void DrawFoods()
+        {
+            foreach (var snakeElement in _snakeElements)
+            {
+                if (!GameWorld.Children.Contains(snakeElement.UIElement))
+                    GameWorld.Children.Add(snakeElement.UIElement);
+
+                Canvas.SetLeft(snakeElement.UIElement, snakeElement.X);
+                Canvas.SetTop(snakeElement.UIElement, snakeElement.Y);
+            }
+        }
+
+        private void CreateFood()
+        {
+            if(_elapsedTicks / 13 == 0)
+            {
+                _foods.Add(new Food(_elementSize) {
+                    X = _randoTron.Next(0, _numberOfColumns) * _elementSize,
+                    Y = _randoTron.Next(0, _numberOfRows) * _elementSize
+                });
+            }
         }
 
         private void CheckCollision()
