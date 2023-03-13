@@ -17,7 +17,7 @@ namespace tic_tac_toe
             Rectangle rect = new Rectangle();
             rect.Width = size;
             rect.Height = size;
-            rect.Fill = Brushes.Green;
+            rect.Fill = Brushes.LightSeaGreen;
             UIElement = rect;
         }
         

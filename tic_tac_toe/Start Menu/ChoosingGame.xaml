@@ -12,19 +12,23 @@
         <Frame x:Name="frame" />
         
         <TextBlock HorizontalAlignment="Center" Height="56" Margin="0,10,0,0" TextWrapping="Wrap" Text="CHOOSE YOUR GAME!" VerticalAlignment="Top" Width="328" FontSize="30"/>
+        
         <Button x:Name="Button_tictactoe" Background="Transparent" HorizontalAlignment="Left" Height="90" Margin="50,100,0,0" VerticalAlignment="Top" Width="90" BorderBrush="Transparent" Click="Button_tictactoe_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/tic-tac-toe - project.jpg"/>
             </StackPanel>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="50,190,0,0" TextWrapping="Wrap" Text="tic-tac-toe" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
+       
         <Button x:Name="Button_movesquare" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Height="90" Margin="354,100,0,0" VerticalAlignment="Top" Width="90" Click="Button_movesquare_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/s0v1k3.jpg"/>
             </StackPanel>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="354,195,0,0" TextWrapping="Wrap" Text="MovinS0v1n" VerticalAlignment="Top" Width="136" FontSize="16" FontWeight="Bold"/>
+        
         <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" VerticalAlignment="Bottom" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold" Margin="20,0,0,20"/>
+       
         <Button x:Name="Button_Maximize" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="30" Margin="690,5,55,0" VerticalAlignment="Top" Width="30" Click="Button_Maximize_Click">
             <StackPanel>
                 <Image Source="../Pictures/maximizeicon.png"/>
@@ -38,10 +42,23 @@
         </Button>
 
         <Button x:Name="Button_Close" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="30" Margin="700,5,5,0" VerticalAlignment="Top" Width="50" Click="Button_Close_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="../Pictures/Closeicon.png"/>
-            </StackPanel>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="50">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Pictures/Closeicon.png"/>
+                </StackPanel>
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
         </Button>
+
         <Button x:Name="Button_hadik" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Height="90" Margin="607,100,0,0" VerticalAlignment="Top" Width="90" Click="Button_hadik_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/Hadik.png"/>

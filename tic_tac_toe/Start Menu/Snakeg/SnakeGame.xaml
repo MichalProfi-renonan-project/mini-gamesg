@@ -5,6 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tic_tac_toe"
         mc:Ignorable="d"
-        Title="SnakeGame" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
-    <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="LightGreen"/>
+        Title="SnakeGame" Height="450" Width="800" WindowStyle="None">
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="1" Content="Start"/>
+            <Button Grid.Column="1" Margin="1" Content="Restart"/>
+            <Button Grid.Column="2" x:Name="Button_back" Content="Back"  Click="Button_back_Click"/>
+        </Grid>
+        <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="Black" Grid.Row="1"/>
+    </Grid>
 </Window>

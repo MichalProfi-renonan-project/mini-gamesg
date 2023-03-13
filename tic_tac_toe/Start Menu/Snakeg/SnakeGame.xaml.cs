@@ -21,30 +21,61 @@ namespace tic_tac_toe
     public partial class SnakeGame : Window
     {
         int _elementSize = 20;
-        private int _numberOfColumns;
-        private int _numberOfRows;
+        int _numberOfColumns;
+        int _numberOfRows;
+        double _gameWidth;
+        double _gameHeight;
 
+        Food _food;
         DispatcherTimer _gameLoopTimer;
         List<SnakeElement> _snakeElements;
-        List<Food> _foods; 
-        private Random _randoTron;
-
-        private Direction _currentDirection;
-        private double _gameWidth;
-        private double _gameHeight;
-        private long _elapsedTicks;
-        private SnakeElement _tailBackup;
+        Random _randoTron;
+        Direction _currentDirection;        
+        SnakeElement _tailBackup;
 
         public SnakeGame()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
+
+        }
+
+        protected override void OnContentRendered(EventArgs e)
+        {
+            InitializeGame();
+            base.OnContentRendered(e);
+        }
+        void InitializeGame()
+        {
             _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
-            _foods = new List<Food>();
             InitializeTimer();
             DrawGameWorld();
             InitializeSnake();
             DrawSnake();
             this.KeyDown += KeyRealised;
+        }
+
+        void ResetGame()
+        {
+            if (_gameLoopTimer != null)
+            {
+                _gameLoopTimer.Stop();
+                _gameLoopTimer.Tick -= MainGameLoop;
+                _gameLoopTimer = null;
+            }
+
+            if(GameWorld != null)
+            {
+                GameWorld.Children.Clear();
+            }
+            _food = null;
+            if(_snakeElements != null)
+            {
+                _snakeElements.Clear();
+                _snakeElements = null;
+            }
+            _tailBackup = null;
         }
 
         private void DrawSnake()
@@ -73,8 +104,8 @@ namespace tic_tac_toe
 
         private void DrawGameWorld()
         {
-            _gameWidth = Width;
-            _gameHeight = Height;
+            _gameWidth = GameWorld.ActualWidth;
+            _gameHeight = GameWorld.ActualHeight;
             _numberOfColumns = (int)_gameWidth / _elementSize;
             _numberOfRows = (int)_gameHeight / _elementSize;
 
@@ -103,11 +134,15 @@ namespace tic_tac_toe
         public void InitializeTimer()
         {
             _gameLoopTimer = new DispatcherTimer();
-            _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.2);
+            _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.5);
             _gameLoopTimer.Tick += MainGameLoop;
             _gameLoopTimer.Start();
         }
 
+        private void MakeGameFaster()
+        {
+            _gameLoopTimer.Interval = _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.1);
+        }
         private void MainGameLoop(object sender, EventArgs e)
         {
             MoveSnake();
@@ -115,31 +150,29 @@ namespace tic_tac_toe
             DrawSnake();
             CreateFood();
             DrawFoods();
-            _elapsedTicks++;
         }
 
         private void DrawFoods()
         {
-            foreach (var food in _foods)
-            {
-                if (!GameWorld.Children.Contains(food.UIElement))
-                    GameWorld.Children.Add(food.UIElement);
-
-                Canvas.SetLeft(food.UIElement, food.X);
-                Canvas.SetTop(food.UIElement, food.Y);
-            }
+            if (_food == null)
+                return;
+            if (!GameWorld.Children.Contains(_food.UIElement))
+                GameWorld.Children.Add(_food.UIElement);
+            Canvas.SetLeft(_food.UIElement, _food.X);
+            Canvas.SetTop(_food.UIElement, _food.Y);
         }
 
         private void CreateFood()
         {
-            if(_elapsedTicks % 17 == 0)
+            if (_food != null)
+                return;
+            _food = new Food(_elementSize)
             {
-                _foods.Add(new Food(_elementSize) {
-                    X = _randoTron.Next(0, _numberOfColumns) * _elementSize,
-                    Y = _randoTron.Next(0, _numberOfRows) * _elementSize
-                });
-            }
+                X = _randoTron.Next(0, _numberOfColumns) * _elementSize,
+                Y = _randoTron.Next(0, _numberOfRows) * _elementSize
+            };
         }
+        
 
         private void CheckCollision()
         {
@@ -150,23 +183,16 @@ namespace tic_tac_toe
 
         private void CheckCollisionWithWorldItems()
         {
+            if (_food == null)
+                return;
             SnakeElement head = _snakeElements[0];
-            Food collidedWithSnake = null;
-            foreach (var food in _foods)
+            if (head.X == _food.X && head.Y == _food.Y)
             {
-                if(head.X == food.X && head.Y == food.Y)
-                {
-                    collidedWithSnake = food;
-                    break;
-                }
-            }
-            if(collidedWithSnake != null)
-            {
-                _foods.Remove(collidedWithSnake);
-                GameWorld.Children.Remove(collidedWithSnake.UIElement);
+                GameWorld.Children.Remove(_food.UIElement);
                 GrowSnake();
+                MakeGameFaster();
+                _food = null;
             }
-            
         }
 
         private void GrowSnake()
@@ -177,6 +203,7 @@ namespace tic_tac_toe
         private void CheckCollisionWithSelf()
         {
             SnakeElement snakeHead = GetSnakeHead();
+            bool hadCollision = false;
             if (snakeHead != null)
             {
                 foreach (var snakeElement in _snakeElements)
@@ -185,11 +212,28 @@ namespace tic_tac_toe
                     {
                         if (snakeElement.X == snakeHead.X && snakeElement.Y == snakeHead.Y)
                         {
-                            MessageBox.Show("Game Over collided with bounds!");
+                            hadCollision = true;
+                            break;
                         }
-                        break;
                     }
                 }
+            }
+            if (hadCollision)
+            {
+                MessageBox.Show("Game Over collided with bounds!");
+                ResetGame();
+                InitializeGame();
+            }
+        }
+
+        private void CheckCollisionWithWorldBounds()
+        {
+            SnakeElement snakeHead = GetSnakeHead();
+            if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
+            {
+                MessageBox.Show("Game Over collided with bounds! Restart?");
+                ResetGame();
+                InitializeGame();
             }
         }
         private SnakeElement GetSnakeHead()
@@ -206,14 +250,6 @@ namespace tic_tac_toe
             return snakeHead;
         }
 
-        private void CheckCollisionWithWorldBounds()
-        {
-            SnakeElement snakeHead = GetSnakeHead();
-            if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
-            {
-                MessageBox.Show("Game Over collided with bounds!");
-            }
-        }
 
         private void MoveSnake()
         {
@@ -257,18 +293,29 @@ namespace tic_tac_toe
             switch (e.Key)
             {
                 case Key.W:
-                    _currentDirection = Direction.Up;
+                    if (_currentDirection != Direction.Down)
+                        _currentDirection = Direction.Up;
                     break;
                 case Key.A:
-                    _currentDirection = Direction.Left;
+                    if (_currentDirection != Direction.Right)
+                        _currentDirection = Direction.Left;
                     break;
                 case Key.S:
-                    _currentDirection = Direction.Down;
+                    if (_currentDirection != Direction.Up)
+                        _currentDirection = Direction.Down;
                     break;
                 case Key.D:
-                    _currentDirection = Direction.Right;
+                    if (_currentDirection != Direction.Left)
+                        _currentDirection = Direction.Right;
                     break;
             }
+        }
+
+        private void Button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ChoosingGame back = new ChoosingGame();
+            back.Show();
         }
     }
     enum Direction
