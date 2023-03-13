@@ -98,7 +98,21 @@ namespace tic_tac_toe
                 X = (_numberOfColumns / 2) * _elementSize,
                 Y = (_numberOfRows / 2) * _elementSize,
                 IsHead = true
-            });           
+            });
+            
+            _snakeElements.Add(new SnakeElement(_elementSize)
+            {
+                X = (_numberOfColumns / 2) * _elementSize,
+                Y = (_numberOfRows / 2) * _elementSize - _elementSize,
+                IsHead = true
+            });
+            
+            _snakeElements.Add(new SnakeElement(_elementSize)
+            {
+                X = (_numberOfColumns / 2) * _elementSize,
+                Y = (_numberOfRows / 2) * _elementSize - (_elementSize * 2),
+                IsHead = true
+            });
             _currentDirection = Direction.Right;
         }
 

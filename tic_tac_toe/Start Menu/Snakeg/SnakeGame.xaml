@@ -18,8 +18,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="1" Content="Start"/>
-            <Button Grid.Column="1" Margin="1" Content="Restart"/>
+            <Button Grid.Column="0" Margin="1" Content="Pause"/>
+            <Button Grid.Column="1" Margin="1" Content="Options"/>
             <Button Grid.Column="2" x:Name="Button_back" Content="Back"  Click="Button_back_Click"/>
         </Grid>
         <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="Black" Grid.Row="1"/>
