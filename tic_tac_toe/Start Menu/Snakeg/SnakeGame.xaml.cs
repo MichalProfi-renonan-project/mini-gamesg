@@ -20,7 +20,7 @@ namespace tic_tac_toe
     /// </summary>
     public partial class SnakeGame : Window
     {
-        int _elementSize = 20;
+        int _elementSize = 30;
         int _numberOfColumns;
         int _numberOfRows;
         int score = 0;
@@ -80,7 +80,9 @@ namespace tic_tac_toe
             }
             _tailBackup = null;
 
-            
+            score = 0;
+            LblFoodCounter.Content = "Score: " + score;
+
         }
 
         private void DrawSnake()
@@ -241,7 +243,7 @@ namespace tic_tac_toe
             }
             if (hadCollision)
             {
-                MessageBox.Show("Game Over collided with bounds!");
+                MessageBox.Show("Game Over collided with your own tail YOU STUPID!");
                 ResetGame();
                 InitializeGame();
             }
@@ -255,6 +257,7 @@ namespace tic_tac_toe
                 MessageBox.Show("Game Over collided with bounds! Restart?");
                 ResetGame();
                 InitializeGame();
+
             }
         }
         private SnakeElement GetSnakeHead()

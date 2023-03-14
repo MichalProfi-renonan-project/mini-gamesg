@@ -10,13 +10,20 @@ namespace tic_tac_toe
 {
     class Food : GameEntity
     {
-        public Food(int Size)
+        public Food(int size)
         {
-            Rectangle rect = new Rectangle();
-            rect.Width = Size;
-            rect.Height = Size;
-            rect.Fill = Brushes.Red;
-            UIElement = rect;
+            Rectangle rect = new Rectangle()
+            {
+                Width = size - 4,
+                Height = size - 4,
+                Fill = Brushes.Red,
+                RadiusX =  15,
+                RadiusY = 15
+            };
+             UIElement = rect;
+            
+            
+            
         }
 
         public override bool Equals(object obj)

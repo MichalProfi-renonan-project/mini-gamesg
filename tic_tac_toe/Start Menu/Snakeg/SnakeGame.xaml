@@ -24,6 +24,7 @@
             <Label x:Name="LblFoodCounter" Content="Score: 0" Height="25" Canvas.Left="206" Canvas.Top="-27" Width="58" Foreground="Black" FontWeight="Bold" Margin="203,2,3.8,3.4"/>
         </Grid>
         <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="Black" Grid.Row="1">
+            
            
 
         </Canvas>
