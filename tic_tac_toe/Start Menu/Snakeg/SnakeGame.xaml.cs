@@ -23,8 +23,10 @@ namespace tic_tac_toe
         int _elementSize = 20;
         int _numberOfColumns;
         int _numberOfRows;
+        int score = 0;
         double _gameWidth;
         double _gameHeight;
+        
 
         Food _food;
         DispatcherTimer _gameLoopTimer;
@@ -63,6 +65,7 @@ namespace tic_tac_toe
                 _gameLoopTimer.Stop();
                 _gameLoopTimer.Tick -= MainGameLoop;
                 _gameLoopTimer = null;
+
             }
 
             if(GameWorld != null)
@@ -76,6 +79,8 @@ namespace tic_tac_toe
                 _snakeElements = null;
             }
             _tailBackup = null;
+
+            
         }
 
         private void DrawSnake()
@@ -102,15 +107,15 @@ namespace tic_tac_toe
             
             _snakeElements.Add(new SnakeElement(_elementSize)
             {
-                X = (_numberOfColumns / 2) * _elementSize,
-                Y = (_numberOfRows / 2) * _elementSize - _elementSize,
+                X = (_numberOfColumns / 2) * _elementSize - _elementSize,
+                Y = (_numberOfRows / 2) * _elementSize,
                 IsHead = true
             });
             
             _snakeElements.Add(new SnakeElement(_elementSize)
             {
-                X = (_numberOfColumns / 2) * _elementSize,
-                Y = (_numberOfRows / 2) * _elementSize - (_elementSize * 2),
+                X = (_numberOfColumns / 2) * _elementSize - (_elementSize * 2),
+                Y = (_numberOfRows / 2) * _elementSize,
                 IsHead = true
             });
             _currentDirection = Direction.Right;
@@ -148,7 +153,7 @@ namespace tic_tac_toe
         public void InitializeTimer()
         {
             _gameLoopTimer = new DispatcherTimer();
-            _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.5);
+            _gameLoopTimer.Interval = TimeSpan.FromSeconds(0.2);
             _gameLoopTimer.Tick += MainGameLoop;
             _gameLoopTimer.Start();
         }
@@ -206,6 +211,8 @@ namespace tic_tac_toe
                 GrowSnake();
                 MakeGameFaster();
                 _food = null;
+                score++;
+                LblFoodCounter.Content = "Score: " + score;
             }
         }
 
@@ -330,6 +337,7 @@ namespace tic_tac_toe
             this.Close();
             ChoosingGame back = new ChoosingGame();
             back.Show();
+            _gameLoopTimer.Stop();
         }
     }
     enum Direction
