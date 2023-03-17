@@ -83,5 +83,12 @@ namespace tic_tac_toe
             SnakeGame snkGame = new SnakeGame();
             snkGame.Show();
         }
+
+        private void Button_Pong_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            PongGame pong = new PongGame();
+            pong.Show();
+        }
     }
 }

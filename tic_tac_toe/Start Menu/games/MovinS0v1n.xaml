@@ -10,7 +10,7 @@
 
     <Grid OpacityMask="Black">
 
-        <Canvas Background="Blue" x:Name ="Gamescreen" Focusable="True" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown">
+        <Canvas Background="Yellow" x:Name ="Gamescreen" Focusable="True" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown">
             <Rectangle Tag="User" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Stroke="Black"  Width="40" x:Name="Player" Canvas.Left="337" Canvas.Top="159">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="../../Pictures/s0v1k3.jpg"/>
