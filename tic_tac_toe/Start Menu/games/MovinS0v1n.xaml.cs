@@ -140,6 +140,24 @@ namespace tic_tac_toe
 
                 }
             }
+
+            foreach (var Player in Gamescreen.Children.OfType<Rectangle>())
+            {
+                if ((string)Player.Tag == "User")
+                {
+                    Player.Stroke = Brushes.Black;
+
+                    Rect boxHitBox = new Rect(Canvas.GetLeft(Box), Canvas.GetTop(Box), Box.Width, Box.Height);
+                    Rect PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+
+                    if (boxHitBox.IntersectsWith(PlayerHitBox))
+                    {
+                        BoxSpeedx = -BoxSpeedx;
+                        BoxSpeedy = -BoxSpeedy;
+                    }
+
+                }
+            }
         }
         
 
