@@ -24,7 +24,9 @@ namespace tic_tac_toe
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private bool UpKeyPressed, DownKeyPressed, LeftKeyPressed, RightKeyPressed;
         private float SpeedX = 6, SpeedY = 6;
-        private int Speed = 12;
+        private int BoxSpeedx = 6;
+        private int BoxSpeedy = 7;
+
         private void KeyBoardDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)
@@ -105,13 +107,41 @@ namespace tic_tac_toe
                 Canvas.SetTop(Player, Canvas.GetTop(Player) + SpeedY);               
             }
 
-            Canvas.SetLeft(Box, Canvas.GetLeft(Box) - Speed);
+            Canvas.SetLeft(Box, Canvas.GetLeft(Box) - BoxSpeedx);
 
-            if (Canvas.GetLeft(Box) < 5 || Canvas.GetLeft(Box) + (Box.Width * 2) > Application.Current.MainWindow.Width)
+            if (Canvas.GetLeft(Box) < 0 || Canvas.GetLeft(Box) + (Box.Width * 2) > Application.Current.MainWindow.Width)
             {
-                Speed = -Speed;
+                BoxSpeedx = -BoxSpeedx;
+            }
+
+            Canvas.SetTop(Box, Canvas.GetTop(Box) - BoxSpeedy);
+
+            if (Canvas.GetTop(Box) < 0 || Canvas.GetTop(Box) + (Box.Height * 2) > Application.Current.MainWindow.Height)
+            {
+                BoxSpeedy = -BoxSpeedy;
+            }
+
+
+
+            foreach (var x in Gamescreen.Children.OfType<Rectangle>()
+            {
+                if ((string)x.Tag == "Shield")
+                {
+                    x.Stroke = Brushes.Black;
+
+                    Rect boxHitBox = new Rect(Canvas.GetLeft(Box), Canvas.GetTop(Box), Box.Width, Box.Height);
+                    Rect WallHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+
+                    if (boxHitBox.IntersectsWith(WallHitBox))
+                    {
+                        BoxSpeedx = -BoxSpeedx;
+                        BoxSpeedy = -BoxSpeedy;
+                    }
+
+                }
             }
         }
+        
 
 
     }

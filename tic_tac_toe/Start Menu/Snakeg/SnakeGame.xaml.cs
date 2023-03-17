@@ -20,7 +20,7 @@ namespace tic_tac_toe
     /// </summary>
     public partial class SnakeGame : Window
     {
-        int _elementSize = 30;
+        int _elementSize = 40;
         int _numberOfColumns;
         int _numberOfRows;
         int score = 0;

@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MovinS0v1n" WindowStyle="None" AllowsTransparency="True">
 
-    <Grid Background="#FF5450FF" OpacityMask="Black">
+    <Grid Background="Bisque" OpacityMask="Black">
 
         <Canvas x:Name ="Gamescreen" Focusable="True" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown">
             <Rectangle Tag="User" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Stroke="Black"  Width="40" x:Name="Player" Canvas.Left="337" Canvas.Top="159">
@@ -17,7 +17,7 @@
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle Tag="Collide" Fill="Red"  Width="50" Height="50" Canvas.Left="300" Canvas.Top="70" x:Name="Box"/>
-            <Rectangle Tag="Collide" Fill="#FFFF00AE"  Width="50" Height="50" Canvas.Left="300" Canvas.Top="300" x:Name="Wall"/>
+            <Rectangle Tag="Shield" Fill="#FFFF00AE"  Width="80" Height="50" Canvas.Left="300" Canvas.Top="300" x:Name="Wall"/>
         </Canvas>
         <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" Margin="32,400,0,20" VerticalAlignment="Bottom" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold"/>
         <TextBlock Height="56" Canvas.Left="176" TextWrapping="Wrap" Text="Move S0v1n with W A S D" Canvas.Top="26" Width="484" FontSize="36" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
