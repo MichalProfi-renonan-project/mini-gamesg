@@ -123,7 +123,7 @@ namespace tic_tac_toe
 
 
 
-            foreach (var x in Gamescreen.Children.OfType<Rectangle>()
+            foreach (var x in Gamescreen.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "Shield")
                 {
