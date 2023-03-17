@@ -111,31 +111,15 @@ namespace tic_tac_toe
                 BallSpeedy = -BallSpeedy;
             }
 
-            foreach (var Player1 in Pongscreen.Children.OfType<Rectangle>())
+
+            foreach (var x in Pongscreen.Children.OfType<Rectangle>())
             {
-                if ((string)Player1.Tag == "Hrac1")
-                {
-                    Player1.Stroke = Brushes.Black;
-
-                    Rect ballHitBox = new Rect(Canvas.GetLeft(Ball), Canvas.GetTop(Ball), Ball.Width, Ball.Height);
-                    Rect PlayerHitBox = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height);
-
-                    if (ballHitBox.IntersectsWith(PlayerHitBox))
-                    {
-                        BallSpeedx = -BallSpeedx;
-                    }
-
-                }
-            }
-
-            foreach (var Player2 in Pongscreen.Children.OfType<Rectangle>())
-            {
-                if ((string)Player2.Tag == "Hrac2")
+                if ((string)x.Tag == "Hrac")
                 {
                     Player2.Stroke = Brushes.Black;
 
                     Rect ball1HitBox = new Rect(Canvas.GetLeft(Ball), Canvas.GetTop(Ball), Ball.Width, Ball.Height);
-                    Rect Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
+                    Rect Player2HitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (ball1HitBox.IntersectsWith(Player2HitBox))
                     {
