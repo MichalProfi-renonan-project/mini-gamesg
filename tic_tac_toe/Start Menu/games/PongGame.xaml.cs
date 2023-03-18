@@ -80,6 +80,8 @@ namespace tic_tac_toe
 
         private void GameTick(object sender, EventArgs e)
         {
+            
+
             if (UpKeyPressed == true && Canvas.GetTop(Player1) > 0)
             {
                 Canvas.SetTop(Player1, Canvas.GetTop(Player1) - SpeedY);
@@ -104,6 +106,8 @@ namespace tic_tac_toe
                 BallSpeedx = -BallSpeedx;
             }
 
+
+
             Canvas.SetTop(Ball, Canvas.GetTop(Ball) - BallSpeedy);
 
             if (Canvas.GetTop(Ball) < 0 || Canvas.GetTop(Ball) + (Ball.Height * 2) > Application.Current.MainWindow.Height)
@@ -112,14 +116,31 @@ namespace tic_tac_toe
             }
 
 
-            foreach (var x in Pongscreen.Children.OfType<Rectangle>())
+            foreach (var Player1 in Pongscreen.Children.OfType<Rectangle>())
             {
-                if ((string)x.Tag == "Hrac")
+                if ((string)Player1.Tag == "Hrac1")
+                {
+                    Player1.Stroke = Brushes.Black;
+
+                    Rect ballHitBox = new Rect(Canvas.GetLeft(Ball), Canvas.GetTop(Ball), Ball.Width, Ball.Height);
+                    Rect PlayerHitBox = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height);
+
+                    if (ballHitBox.IntersectsWith(PlayerHitBox))
+                    {
+                        BallSpeedx = -BallSpeedx;
+                    }
+
+                }
+            }
+
+            foreach (var Player2 in Pongscreen.Children.OfType<Rectangle>())
+            {
+                if ((string)Player2.Tag == "Hrac2")
                 {
                     Player2.Stroke = Brushes.Black;
 
                     Rect ball1HitBox = new Rect(Canvas.GetLeft(Ball), Canvas.GetTop(Ball), Ball.Width, Ball.Height);
-                    Rect Player2HitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    Rect Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
 
                     if (ball1HitBox.IntersectsWith(Player2HitBox))
                     {
@@ -129,12 +150,13 @@ namespace tic_tac_toe
                 }
             }
         }
-
+    
         private void Button_back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            ChoosingGame back = new ChoosingGame();
-            back.Show();
+           this.Close();
+           ChoosingGame back = new ChoosingGame();
+           back.Show();
         }
+        
     }
 }

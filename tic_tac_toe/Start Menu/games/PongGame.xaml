@@ -20,9 +20,12 @@
             <Button Grid.Column="0" Content="Back" x:Name="Button_back" Click="Button_back_Click"/>
         </Grid>
         <Canvas Background="Black" x:Name ="Pongscreen" Focusable="True" Grid.Row="1" KeyUp="KeyIsUp" KeyDown="KeyIsDown">
-            <Rectangle Fill="#FFF4F4F5" Tag="Hrac" x:Name="Player1" Height="90" Canvas.Left="40" Stroke="Black" Canvas.Top="147" Width="14"/>
-            <Rectangle Fill="#FFF4F4F5" Tag="Hrac" x:Name="Player2" Height="90" Canvas.Right="40" Stroke="Black" Canvas.Top="147" Width="14"/>
-            <Rectangle Tag="Ball" Fill="White"  Width="15" Height="15" Canvas.Left="300" Canvas.Top="70" x:Name="Ball" RadiusX="7.5" RadiusY="7.5"/>
+            
+            
+            <Rectangle Tag="Ball" Fill="White"  Width="15" Height="15" Canvas.Right="Auto" Canvas.Left="300"  Canvas.Top="70" x:Name="Ball" RadiusX="7.5" RadiusY="7.5"/>
+
+            <Rectangle Fill="Blue" Tag="Enemak" x:Name="Player2" Height="90" Canvas.Right="40" Stroke="Black" Canvas.Top="147" Width="14"/>
+            <Rectangle Fill="#FFF4F4F5" Tag="Hrac1" x:Name="Player1" Height="90" Canvas.Left="40" Stroke="Black" Canvas.Top="147" Width="14"/>
         </Canvas>
     </Grid>
 </Window>
