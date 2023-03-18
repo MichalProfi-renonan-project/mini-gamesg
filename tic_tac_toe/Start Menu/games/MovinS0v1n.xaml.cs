@@ -127,17 +127,21 @@ namespace tic_tac_toe
             {
                 if ((string)x.Tag == "Shield")
                 {
-                    x.Stroke = Brushes.Black;
+                    Rect shieldHitBox = new Rect(Canvas.GetRight(x), Canvas.GetTop(x), x.Width, x.Height);
 
-                    Rect boxHitBox = new Rect(Canvas.GetLeft(Box), Canvas.GetTop(Box), Box.Width, Box.Height);
-                    Rect WallHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-
-                    if (boxHitBox.IntersectsWith(WallHitBox))
+                    // Loop over all the moving objects and check for collision with the shield
+                    foreach (var Collide in Gamescreen.Children.OfType<FrameworkElement>())
                     {
-                        BoxSpeedx = -BoxSpeedx;
-                        BoxSpeedy = -BoxSpeedy;
-                    }
+                        Rect objHitBox = new Rect(Canvas.GetLeft(Collide), Canvas.GetTop(Collide), Collide.Width, Collide.Height);
 
+                        if (shieldHitBox.IntersectsWith(objHitBox))
+                        {
+                            // Collision detected! Handle it here
+                            x.Stroke = Brushes.Black;
+                            BoxSpeedx = -BoxSpeedx;
+                            BoxSpeedy = -BoxSpeedy;
+                        }
+                    }
                 }
             }
 
