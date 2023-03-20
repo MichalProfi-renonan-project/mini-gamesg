@@ -173,6 +173,43 @@ namespace tic_tac_toe
             DrawFoods();
         }
 
+        private void MoveSnake()
+        {
+            SnakeElement head = _snakeElements[0];
+            SnakeElement tail = _snakeElements[_snakeElements.Count - 1];
+
+            _tailBackup = new SnakeElement(_elementSize)
+            {
+                X = tail.X,
+                Y = tail.Y
+            };
+
+            head.IsHead = false;
+            tail.IsHead = true;
+            tail.X = head.X;
+            tail.Y = head.Y;
+
+            switch (_currentDirection)
+            {
+                case Direction.Right:
+                    tail.X += _elementSize;
+                    break;
+                case Direction.Left:
+                    tail.X -= _elementSize;
+                    break;
+                case Direction.Up:
+                    tail.Y -= _elementSize;
+                    break;
+                case Direction.Down:
+                    tail.Y += _elementSize;
+                    break;
+
+            }
+            _snakeElements.RemoveAt(_snakeElements.Count - 1);
+            _snakeElements.Insert(0, tail);
+
+        }
+
         private void DrawFoods()
         {
             if (_food == null)
@@ -275,42 +312,7 @@ namespace tic_tac_toe
         }
 
 
-        private void MoveSnake()
-        {
-            SnakeElement head = _snakeElements[0];
-            SnakeElement tail = _snakeElements[_snakeElements.Count - 1];
-   
-            _tailBackup = new SnakeElement(_elementSize)
-            {
-                X = tail.X,
-                Y = tail.Y
-            };
-
-            head.IsHead = false;
-            tail.IsHead = true;
-            tail.X = head.X;
-            tail.Y = head.Y;
-
-            switch (_currentDirection)
-            {
-                case Direction.Right:
-                    tail.X += _elementSize;
-                    break;
-                case Direction.Left:
-                    tail.X -= _elementSize;
-                    break;
-                case Direction.Up:
-                    tail.Y -= _elementSize;
-                    break;
-                case Direction.Down:
-                    tail.Y += _elementSize;
-                    break;
-
-            }
-            _snakeElements.RemoveAt(_snakeElements.Count - 1);
-            _snakeElements.Insert(0, tail);
-
-        }
+        
 
         private void KeyRealised(object sender, KeyEventArgs e)
         {
