@@ -17,8 +17,8 @@ namespace tic_tac_toe
                 Width = size - 4,
                 Height = size - 4,
                 Fill = Brushes.Red,
-                RadiusX =  size / 2,
-                RadiusY = size / 2
+                RadiusX =  size / 2 - 2,
+                RadiusY = size / 2 - 2
             };
              UIElement = rect;
             

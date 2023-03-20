@@ -22,9 +22,9 @@
         <Canvas Background="Black" x:Name ="Pongscreen" Focusable="True" Grid.Row="1" KeyUp="KeyIsUp" KeyDown="KeyIsDown">
             
             
-            <Rectangle Tag="Ball" Fill="White"  Width="15" Height="15" Canvas.Right="Auto" Canvas.Left="300"  Canvas.Top="70" x:Name="Ball" RadiusX="7.5" RadiusY="7.5"/>
-
-            <Rectangle Fill="Blue" Tag="Enemak" x:Name="Player2" Height="90" Canvas.Left="1000" Stroke="Black" Canvas.Top="147" Width="14"/>
+            
+            <Ellipse Name="Ball" Height="20" Width="20" Fill="Red" Canvas.Left="900" Canvas.Top="150" ></Ellipse>
+            <Rectangle Fill="#FFF4F4F5" Tag="Enemak" x:Name="Player2" Height="90" Canvas.Right="40" Stroke="Black" Canvas.Top="147" Width="14"/>
             <Rectangle Fill="#FFF4F4F5" Tag="Hrac1" x:Name="Player1" Height="90" Canvas.Left="40" Stroke="Black" Canvas.Top="147" Width="14"/>
         </Canvas>
     </Grid>

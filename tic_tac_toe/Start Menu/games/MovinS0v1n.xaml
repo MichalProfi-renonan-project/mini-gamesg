@@ -10,13 +10,13 @@
 
     <Grid OpacityMask="Black">
 
-        <Canvas Background="Yellow" x:Name ="Gamescreen" Focusable="True" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown">
+        <Canvas Background="Gray" x:Name ="Gamescreen" Focusable="True" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown">
             <Rectangle Tag="User" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Stroke="Black"  Width="40" x:Name="Player" Canvas.Left="337" Canvas.Top="159">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="../../Pictures/s0v1k3.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle Tag="Collide" Fill="Red"  Width="50" Height="50" Canvas.Left="300" Canvas.Top="70" x:Name="Box" RadiusX="25" RadiusY="25"/>
+            <Ellipse Tag="Collide" Fill="Red"  Width="50" Height="50" Canvas.Left="300" Canvas.Top="70" x:Name="Box"/>
             <Rectangle Tag="Shield" Fill="#FFFF00AE"  Width="300" Height="50" Canvas.Right="400" Canvas.Top="300" x:Name="Wall"/>
         </Canvas>
         <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" Margin="32,400,0,20" VerticalAlignment="Bottom" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold"/>

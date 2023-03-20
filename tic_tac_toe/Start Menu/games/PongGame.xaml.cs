@@ -25,7 +25,7 @@ namespace tic_tac_toe
         private float SpeedY = 6;
         private bool UpKeyPressed, DownKeyPressed, UpKeyPressed1, DownKeyPressed1;
         private int BallSpeedx = 6;
-        private int BallSpeedy = 7;
+        private int BallSpeedy = 8;
         public PongGame()
         {
             InitializeComponent();
@@ -100,21 +100,32 @@ namespace tic_tac_toe
             }
 
             Canvas.SetLeft(Ball, Canvas.GetLeft(Ball) - BallSpeedx);
-
             if (Canvas.GetLeft(Ball) < 0 || Canvas.GetLeft(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
             {
-                BallSpeedx = -BallSpeedx;
+                BallSpeedx = 0;
+                BallSpeedy = 0;
             }
-
-
-
+            Canvas.SetRight(Ball, Canvas.GetRight(Ball) - BallSpeedx);
+            if (Canvas.GetRight(Ball) < 0 || Canvas.GetRight(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
+            {
+                BallSpeedx = 0;
+                BallSpeedy = 0;
+            }
             Canvas.SetTop(Ball, Canvas.GetTop(Ball) - BallSpeedy);
-
             if (Canvas.GetTop(Ball) < 0 || Canvas.GetTop(Ball) + (Ball.Height * 2) > Application.Current.MainWindow.Height)
             {
                 BallSpeedy = -BallSpeedy;
             }
 
+            var x = Canvas.GetLeft(Ball);
+            var y = Canvas.GetTop(Ball);
+            
+            if (x + Ball.Width >= Pongscreen.ActualWidth - (Canvas.GetRight(Player2) + Player2.Width)
+                && y + Player2.Width >= Canvas.GetTop(Player2)
+                && y + Ball.Height <= Canvas.GetTop(Player2) + Player2.Height)
+            {
+                BallSpeedx = -BallSpeedx;
+            }
 
             foreach (var Player1 in Pongscreen.Children.OfType<Rectangle>())
             {
@@ -133,22 +144,6 @@ namespace tic_tac_toe
                 }
             }
 
-            foreach (var Player2 in Pongscreen.Children.OfType<Rectangle>())
-            {
-                if ((string)Player2.Tag == "Hrac2")
-                {
-                    Player2.Stroke = Brushes.Black;
-
-                    Rect ball1HitBox = new Rect(Canvas.GetLeft(Ball), Canvas.GetTop(Ball), Ball.Width, Ball.Height);
-                    Rect Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
-
-                    if (ball1HitBox.IntersectsWith(Player2HitBox))
-                    {
-                        BallSpeedx = -BallSpeedx;
-                    }
-
-                }
-            }
         }
     
         private void Button_back_Click(object sender, RoutedEventArgs e)
