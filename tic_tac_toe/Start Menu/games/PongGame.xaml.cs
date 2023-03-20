@@ -24,8 +24,8 @@ namespace tic_tac_toe
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private float SpeedY = 6;
         private bool UpKeyPressed, DownKeyPressed, UpKeyPressed1, DownKeyPressed1;
-        private int BallSpeedx = 6;
-        private int BallSpeedy = 8;
+        private int BallSpeedx = 7;
+        private int BallSpeedy = 9;
         public PongGame()
         {
             InitializeComponent();
@@ -126,6 +126,7 @@ namespace tic_tac_toe
             {
                 BallSpeedx = -BallSpeedx;
             }
+            
 
             foreach (var Player1 in Pongscreen.Children.OfType<Rectangle>())
             {
