@@ -23,7 +23,6 @@
         </Button>
 
         <Button x:Name="Button_Close" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="30" Margin="700,5,5,0" VerticalAlignment="Top" Width="50" Click="Button_Close_Click">
-
             <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="50">
                 <StackPanel Orientation="Horizontal" >
                     <Image Source="Pictures/Closeicon.png"/>
@@ -40,9 +39,9 @@
                 </Label.Style>
             </Label>
         </Button>
-
+        
     </Grid>
-
+    
 
 </Window>
 

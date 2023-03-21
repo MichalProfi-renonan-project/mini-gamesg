@@ -26,6 +26,8 @@ namespace tic_tac_toe
         private bool UpKeyPressed, DownKeyPressed, UpKeyPressed1, DownKeyPressed1;
         private int BallSpeedx = 7;
         private int BallSpeedy = 9;
+        int score = 0;
+        int score1 = 0;
         public PongGame()
         {
             InitializeComponent();
@@ -100,16 +102,26 @@ namespace tic_tac_toe
             }
 
             Canvas.SetLeft(Ball, Canvas.GetLeft(Ball) - BallSpeedx);
-            if (Canvas.GetLeft(Ball) < 0 || Canvas.GetLeft(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
+            if (Canvas.GetLeft(Ball) < 0)
             {
-                BallSpeedx = 0;
-                BallSpeedy = 0;
+                BallSpeedx = -BallSpeedx;
+                BallSpeedy = -BallSpeedy;
+                MessageBox.Show("Player 2 wins!");
+                ResetGame();
+                
+                score++;
+                lblPongPlayer2.Content = "Player 2: " + score;
             }
+
             Canvas.SetRight(Ball, Canvas.GetRight(Ball) - BallSpeedx);
-            if (Canvas.GetRight(Ball) < 0 || Canvas.GetRight(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
+            if (Canvas.GetLeft(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
             {
-                BallSpeedx = 0;
-                BallSpeedy = 0;
+                BallSpeedx = -BallSpeedx;
+                BallSpeedy = -BallSpeedy;
+                MessageBox.Show("Player 1 wins!");
+                ResetGame();
+                score1++;
+                lblPongPlayer1.Content = "Player 1: " + score1;
             }
             Canvas.SetTop(Ball, Canvas.GetTop(Ball) - BallSpeedy);
             if (Canvas.GetTop(Ball) < 0 || Canvas.GetTop(Ball) + (Ball.Height * 2) > Application.Current.MainWindow.Height)
@@ -146,12 +158,42 @@ namespace tic_tac_toe
             }
 
         }
+        void ResetGame()
+        {
+            
+
+            Canvas.SetLeft(Ball, Canvas.GetLeft(Ball) - BallSpeedx);
+            if (Canvas.GetLeft(Ball) < 0 || Canvas.GetLeft(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
+            {
+                BallSpeedx = -BallSpeedx;
+                BallSpeedy = -BallSpeedy;
+            }
+            Canvas.SetRight(Ball, Canvas.GetRight(Ball) - BallSpeedx);
+            if (Canvas.GetRight(Ball) < 0 || Canvas.GetRight(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
+            {
+                BallSpeedx = -BallSpeedx;
+                BallSpeedy = -BallSpeedy;
+            }
+            Canvas.SetTop(Ball, Canvas.GetTop(Ball) - BallSpeedy);
+            if (Canvas.GetTop(Ball) < 0 || Canvas.GetTop(Ball) + (Ball.Height * 2) > Application.Current.MainWindow.Height)
+            {
+                BallSpeedy = -BallSpeedy;
+            }
+
+        }
+
     
         private void Button_back_Click(object sender, RoutedEventArgs e)
         {
            this.Close();
            ChoosingGame back = new ChoosingGame();
            back.Show();
+           GameTimer.Stop();
+            GameTimer = null;
+           score = 0;
+           lblPongPlayer2.Content = "Player 2: " + score; 
+           score1 = 0;
+           lblPongPlayer1.Content = "Player 1: " + score1;
         }
         
     }

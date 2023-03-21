@@ -23,7 +23,7 @@
             <Button Margin="2,114,0,59.6" Height="50" VerticalAlignment="Top" Grid.Row="0" x:Name="Button_back" Content="Back"  Click="Button_back_Click" FontSize="18" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}"/>
             <Label VerticalAlignment="Center" Grid.Row="1" x:Name="LblFoodCounter" Content="Score: 0" Canvas.Left="206" Canvas.Top="-27" Foreground="White" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Background="Black"/>
         </Grid>
-        <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="White" Grid.Column = "1">
+        <Canvas x:Name="GameWorld" KeyDown="KeyRealised" Background="Black" Grid.Column = "1">
 
         </Canvas>
     </Grid>

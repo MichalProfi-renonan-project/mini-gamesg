@@ -188,5 +188,8 @@
   <ItemGroup>
     <Resource Include="Pictures\Pong.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\game_over.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -283,6 +284,9 @@ namespace tic_tac_toe
                 MessageBox.Show("Game Over collided with your own tail YOU STUPID!");
                 ResetGame();
                 InitializeGame();
+                SoundPlayer player = new SoundPlayer(@"C:\Users\matah\Downloads\game_over.wav");
+                player.Load();
+                player.Play();
             }
         }
 
@@ -291,10 +295,13 @@ namespace tic_tac_toe
             SnakeElement snakeHead = GetSnakeHead();
             if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
             {
+                SoundPlayer player = new SoundPlayer(@"C:\Users\matah\Downloads\game_over.wav");
+                player.Load();
+                player.Play();
                 MessageBox.Show("Game Over collided with bounds! Restart?");
                 ResetGame();
                 InitializeGame();
-
+                
             }
         }
         private SnakeElement GetSnakeHead()
