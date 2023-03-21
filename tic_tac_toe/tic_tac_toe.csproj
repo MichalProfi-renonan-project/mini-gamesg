@@ -73,6 +73,9 @@
     <Compile Include="Start Menu\ChoosingGame.xaml.cs">
       <DependentUpon>ChoosingGame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Start Menu\games\boats.xaml.cs">
+      <DependentUpon>boats.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Start Menu\games\MovinS0v1n.xaml.cs">
       <DependentUpon>MovinS0v1n.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Start Menu\ChoosingGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start Menu\games\boats.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +197,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pictures\game_over.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\boatslogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

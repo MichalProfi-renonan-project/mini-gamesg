@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using tic_tac_toe.Start_Menu.games;
 
 namespace tic_tac_toe
 {
@@ -90,5 +91,12 @@ namespace tic_tac_toe
             PongGame pong = new PongGame();
             pong.Show();
         }
+        private void Button_Boats_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            boats boatsgame = new boats();
+            boatsgame.Show();
+        }
+
     }
 }
