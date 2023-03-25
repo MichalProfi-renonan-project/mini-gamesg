@@ -196,7 +196,10 @@
     <Resource Include="Pictures\Pong.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pictures\game_over.wav" />
+    <None Include="Sounds\eat_sound.wav" />
+    <None Include="Sounds\sp_-it-trap-remix-scloudtomp3downloader.com.wav" />
+    <Content Include="Sounds\game_over.wav" />
+    <Content Include="Sounds\you_suck.wav" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\boatslogo.png" />
