@@ -27,6 +27,7 @@ namespace tic_tac_toe
         int score = 0;
         double _gameWidth;
         double _gameHeight;
+        bool paused = false;
         
 
         Food _food;
@@ -36,7 +37,8 @@ namespace tic_tac_toe
         Direction _currentDirection;        
         SnakeElement _tailBackup;
         SoundPlayer game_over_player = new SoundPlayer(Properties.Resources.game_over);
-        SoundPlayer spsit = new SoundPlayer(Properties.Resources.sp__it_trap_remix_scloudtomp3downloader_com);
+        SoundPlayer eatsnake = new SoundPlayer(Properties.Resources.eatingsfxwav_14588);
+
 
         public SnakeGame()
         {
@@ -44,7 +46,7 @@ namespace tic_tac_toe
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
             
-            spsit.Play();
+            
             
         }
 
@@ -87,7 +89,7 @@ namespace tic_tac_toe
 
             score = 0;
             LblFoodCounter.Content = "Score: " + score;
-            spsit.Play();
+            
         }
 
         private void DrawSnake()
@@ -254,7 +256,8 @@ namespace tic_tac_toe
                 GameWorld.Children.Remove(_food.UIElement);
                 GrowSnake();
                 MakeGameFaster();
-                _food = null;                
+                _food = null;
+                eatsnake.Play();
                 score++;
                 LblFoodCounter.Content = "Score: " + score;
                 
@@ -291,7 +294,6 @@ namespace tic_tac_toe
                 
                 game_over_player.Play();
                 MessageBox.Show("Game Over collided with your own tail YOU STUPID!");
-                spsit.Stop();
                 ResetGame();
                 InitializeGame();                
             }
@@ -305,7 +307,6 @@ namespace tic_tac_toe
                                
                 game_over_player.Play();                
                 MessageBox.Show("Game Over collided with bounds! Restart?");
-                spsit.Stop();
                 ResetGame();
                 InitializeGame();
                 
@@ -357,7 +358,15 @@ namespace tic_tac_toe
             ChoosingGame back = new ChoosingGame();
             back.Show();
             _gameLoopTimer.Stop();
-            spsit.Stop();
+        }
+
+        private void Button_pause_Click(object sender, RoutedEventArgs e)
+        {
+            _gameLoopTimer.Stop();
+            string caption = "Do you want resume the game?";
+            MessageBoxResult result = MessageBox.Show(caption);
+            _gameLoopTimer.Start();
+
         }
     }
     enum Direction

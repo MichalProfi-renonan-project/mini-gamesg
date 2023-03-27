@@ -72,18 +72,18 @@ namespace tic_tac_toe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream game_over {
+        internal static System.IO.UnmanagedMemoryStream eatingsfxwav_14588 {
             get {
-                return ResourceManager.GetStream("game_over", resourceCulture);
+                return ResourceManager.GetStream("eatingsfxwav_14588", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sp__it_trap_remix_scloudtomp3downloader_com {
+        internal static System.IO.UnmanagedMemoryStream game_over {
             get {
-                return ResourceManager.GetStream("sp__it_trap_remix_scloudtomp3downloader_com", resourceCulture);
+                return ResourceManager.GetStream("game_over", resourceCulture);
             }
         }
         

@@ -196,13 +196,10 @@
     <Resource Include="Pictures\Pong.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sounds\eat_sound.wav" />
-    <None Include="Sounds\sp_-it-trap-remix-scloudtomp3downloader.com.wav" />
-    <Content Include="Sounds\game_over.wav" />
-    <Content Include="Sounds\you_suck.wav" />
+    <Resource Include="Pictures\boatslogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\boatslogo.png" />
+    <None Include="Resources\eatingsfxwav-14588.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
