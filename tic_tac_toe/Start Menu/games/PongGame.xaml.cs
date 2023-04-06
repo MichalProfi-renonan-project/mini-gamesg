@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Media;
 
 namespace tic_tac_toe
 {
@@ -28,6 +29,8 @@ namespace tic_tac_toe
         private int BallSpeedy = 9;
         int score = 0;
         int score1 = 0;
+
+        SoundPlayer bounce_sound = new SoundPlayer(Properties.Resources.bouncesound);
         public PongGame()
         {
             InitializeComponent();
@@ -79,7 +82,7 @@ namespace tic_tac_toe
                 DownKeyPressed1 = false;
             }
         }
-
+        
         private void GameTick(object sender, EventArgs e)
         {
             
@@ -101,9 +104,13 @@ namespace tic_tac_toe
                 Canvas.SetTop(Player2, Canvas.GetTop(Player2) + SpeedY);
             }
 
+            
+
             Canvas.SetLeft(Ball, Canvas.GetLeft(Ball) - BallSpeedx);
             if (Canvas.GetLeft(Ball) < 0)
             {
+                Canvas.SetLeft(Ball, (Pongscreen.ActualWidth - Ball.ActualWidth) / 2);
+                Canvas.SetTop(Ball, (Pongscreen.ActualHeight - Ball.ActualHeight) / 2);
                 BallSpeedx = -BallSpeedx;
                 BallSpeedy = -BallSpeedy;
                 MessageBox.Show("Player 2 wins!");
@@ -116,6 +123,8 @@ namespace tic_tac_toe
             Canvas.SetRight(Ball, Canvas.GetRight(Ball) - BallSpeedx);
             if (Canvas.GetLeft(Ball) + (Ball.Width * 2) > Application.Current.MainWindow.Width)
             {
+                Canvas.SetLeft(Ball, (Pongscreen.ActualWidth - Ball.ActualWidth) / 2);
+                Canvas.SetTop(Ball, (Pongscreen.ActualHeight - Ball.ActualHeight) / 2);
                 BallSpeedx = -BallSpeedx;
                 BallSpeedy = -BallSpeedy;
                 MessageBox.Show("Player 1 wins!");
@@ -136,7 +145,9 @@ namespace tic_tac_toe
                 && y + Player2.Width >= Canvas.GetTop(Player2)
                 && y + Ball.Height <= Canvas.GetTop(Player2) + Player2.Height)
             {
+                
                 BallSpeedx = -BallSpeedx;
+                bounce_sound.Play();
             }
             
 
@@ -144,6 +155,7 @@ namespace tic_tac_toe
             {
                 if ((string)Player1.Tag == "Hrac1")
                 {
+                    
                     Player1.Stroke = Brushes.Black;
 
                     Rect ballHitBox = new Rect(Canvas.GetLeft(Ball), Canvas.GetTop(Ball), Ball.Width, Ball.Height);
@@ -152,12 +164,15 @@ namespace tic_tac_toe
                     if (ballHitBox.IntersectsWith(PlayerHitBox))
                     {
                         BallSpeedx = -BallSpeedx;
+                        bounce_sound.Play();
                     }
 
                 }
             }
 
         }
+
+        
         void ResetGame()
         {
             

@@ -201,5 +201,8 @@
   <ItemGroup>
     <None Include="Resources\eatingsfxwav-14588.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bouncesound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

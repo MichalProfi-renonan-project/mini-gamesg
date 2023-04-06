@@ -27,7 +27,7 @@ namespace tic_tac_toe
         int score = 0;
         double _gameWidth;
         double _gameHeight;
-        bool paused = false;
+        
         
 
         Food _food;
@@ -45,9 +45,7 @@ namespace tic_tac_toe
             InitializeComponent();
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
-            
-            
-            
+       
         }
 
         protected override void OnContentRendered(EventArgs e)
