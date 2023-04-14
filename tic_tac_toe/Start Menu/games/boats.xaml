@@ -42,22 +42,23 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="A" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="2" Text="B" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="3" Text="C" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="4" Text="D" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="5" Text="E" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="6" Text="F" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="7" Text="G" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="8" Text="H" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="1" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="2" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="3" Grid.Row="0" Text="3" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="4" Grid.Row="0" Text="4" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="5" Grid.Row="0" Text="5" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="6" Grid.Row="0" Text="6" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="7" Grid.Row="0" Text="7" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="8" Grid.Row="0" Text="8" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="A" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="B" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="C" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="D" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="5" Text="E" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="6" Text="F" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="7" Text="G" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="8" Text="H" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="9" Text="CH" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="1" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="2" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="3" Grid.Row="0" Text="3" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="4" Grid.Row="0" Text="4" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="5" Grid.Row="0" Text="5" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="6" Grid.Row="0" Text="6" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="7" Grid.Row="0" Text="7" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="8" Grid.Row="0" Text="8" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
         </Grid>
         <Grid Grid.Column="1"
               ShowGridLines="True"
@@ -86,22 +87,23 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Column="9" Grid.Row="1" Text="I" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="2" Text="J" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="3" Text="K" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="4" Text="L" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="5" Text="M" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="6" Text="N" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="7" Text="O" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="9" Grid.Row="8" Text="P" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="1" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="2" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="3" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="3" Grid.Row="0" Text="4" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="4" Grid.Row="0" Text="5" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="5" Grid.Row="0" Text="6" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="6" Grid.Row="0" Text="7" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
-            <TextBlock Grid.Column="7" Grid.Row="0" Text="8" FontWeight="Bold" TextAlignment="Center" FontSize="22" />
+            <TextBlock Grid.Column="9" Grid.Row="1" Text="I" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="2" Text="J" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="3" Text="K" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="4" Text="L" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="5" Text="M" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="6" Text="N" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="7" Text="O" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="8" Text="P" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="9" Grid.Row="9" Text="R" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="1" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="2" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="3" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="3" Grid.Row="0" Text="4" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="4" Grid.Row="0" Text="5" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="5" Grid.Row="0" Text="6" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="6" Grid.Row="0" Text="7" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
+            <TextBlock Grid.Column="7" Grid.Row="0" Text="8" FontWeight="Bold" TextAlignment="Center" FontSize="42" />
         </Grid>
         <Grid Grid.Row="0"
               Grid.Column="0">
