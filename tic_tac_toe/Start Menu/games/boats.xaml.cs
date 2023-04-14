@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace tic_tac_toe.Start_Menu.games
+namespace tic_tac_toe
 {
     /// <summary>
     /// Interaction logic for boats.xaml
@@ -22,8 +22,16 @@ namespace tic_tac_toe.Start_Menu.games
         public boats()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
 
+        }
 
+        private void Button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ChoosingGame back = new ChoosingGame();
+            back.Show();
         }
     }
 }
