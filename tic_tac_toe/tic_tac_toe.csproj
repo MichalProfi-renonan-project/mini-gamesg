@@ -91,6 +91,9 @@
     <Compile Include="Start Menu\games\Tictactoe.xaml.cs">
       <DependentUpon>Tictactoe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Start Menu\games\Survival.xaml.cs">
+      <DependentUpon>Survival.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Start Menu\games\Tictactoe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start Menu\games\Survival.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bouncesound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Running man.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

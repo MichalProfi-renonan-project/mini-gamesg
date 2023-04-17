@@ -49,12 +49,7 @@ namespace tic_tac_toe
 
 
 
-        private void Button_back_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            ChoosingGame back = new ChoosingGame();
-            back.Show();
-        }
+        
 
         private void KeyBoardUp(object sender, KeyEventArgs e)
         {
@@ -143,7 +138,14 @@ namespace tic_tac_toe
                 }
             }
         }
-        
+
+        private void Button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ChoosingGame back = new ChoosingGame();
+            back.Show();
+        }
+
 
 
     }

@@ -1,0 +1,30 @@
+﻿<Window x:Class="tic_tac_toe.Survival"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tic_tac_toe"
+        mc:Ignorable="d"
+        Title="Survival" Height="450" Width="800" Loaded="Window_Loaded" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Height="30" Grid.Column="0" x:Name="Button_back" Content="Back"  Click="Button_back_Click" FontSize="18" FontWeight="Bold" BorderBrush="Transparent" Background="Transparent" Foreground="Black"/>
+            <Label x:Name="TimerLabel" Content="0" Grid.Column="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+        </Grid>
+        <Canvas Background="SandyBrown" x:Name="RunningField" Grid.Row="1" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown" Focusable="True">
+            <Rectangle x:Name="Survivor" Height="30" Width="30" Fill="Black" Canvas.Left="500" Canvas.Top="200" Tag="User"/>
+            <Rectangle Tag="Enemy" x:Name="Ball" Height="40" Width="40" Fill="White" Canvas.Left="900" Canvas.Top="150" ></Rectangle>
+            <Rectangle Tag="Enemy" x:Name="BallKolega" Height="40" Width="40" Fill="White" Canvas.Left="450" Canvas.Top="150" ></Rectangle>
+            
+        </Canvas>
+    </Grid>
+</Window>

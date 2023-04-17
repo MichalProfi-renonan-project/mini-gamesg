@@ -98,5 +98,11 @@ namespace tic_tac_toe
             boatsgame.Show();
         }
 
+        private void Button_Survival_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Survival survival = new Survival();
+            survival.Show();
+        }
     }
 }
