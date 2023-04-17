@@ -31,6 +31,7 @@ namespace tic_tac_toe
         int score1 = 0;
 
         SoundPlayer bounce_sound = new SoundPlayer(Properties.Resources.bouncesound);
+
         public PongGame()
         {
             InitializeComponent();
