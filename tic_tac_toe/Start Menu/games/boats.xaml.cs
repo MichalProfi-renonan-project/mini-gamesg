@@ -27,6 +27,7 @@ namespace tic_tac_toe
 
         int totalships = 10;
         int buttonClickCount = 0;
+        private bool firstTime = true;
         int playerscore;
         int enemyscore;
         
@@ -48,6 +49,11 @@ namespace tic_tac_toe
             {
                 button.Click += Button_Click;
             }
+
+
+
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,6 +72,9 @@ namespace tic_tac_toe
             {
                 clickedButton.Background = new SolidColorBrush(Colors.Gold);
             }
+
+
+            
         }
 
 

@@ -194,6 +194,8 @@ namespace tic_tac_toe
             this.Close();
             ChoosingGame back = new ChoosingGame();
             back.Show();
+
+            GameTimer.Stop();
         }
     }
 }
