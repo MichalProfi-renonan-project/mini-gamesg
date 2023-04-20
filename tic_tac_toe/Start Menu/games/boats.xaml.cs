@@ -30,6 +30,7 @@ namespace tic_tac_toe
         private bool firstTime = true;
         int playerscore;
         int enemyscore;
+        int times;
         
         public boats()
         {
@@ -47,34 +48,66 @@ namespace tic_tac_toe
             enemyPositionButtons = new List<Button> {I1, I2, I3, I4, I5, I6, I7, I8, J1, J2, J3, J4, J5, J6, J7, J8, K1, K2, K3, K4, K5, K6, K7, K8, L1, L2, L3, L4, L5, L6, L7, L8, M1, M2, M3, M4, M5, M6, M7, M8, N1, N2, N3, N4, N5, N6, N7, N8, O1, O2, O3, O4, O5, O6, O7, O8, P1, P2, P3, P4, P5, P6, P7, P8, R1, R2, R3, R4, R5, R6, R7, R8};
             foreach (Button button in playerPositionButtons)
             {
-                button.Click += Button_Click;
+                    
+                    button.Click += Button_Click;            
             }
-
-
-
-
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            buttonClickCount++;
+           
 
             Button clickedButton = (Button)sender;
 
 
 
-            if (buttonClickCount > totalships)
+            //foreach (Button button in playerPositionButtons)
+            //{
+            //    if (clickedButton.Background == new SolidColorBrush(Colors.Gold))
+            //    {
+            //        times++;
+            //    }
+
+            //    if (times > 10)
+            //    {
+            //        MessageBox.Show("You have clicked on more than 10 buttons.", "Button Click Count", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    }
+
+            //    if (buttonClickCount != totalships)
+            //    {
+            //        clickedButton.Background = new SolidColorBrush(Colors.Gold);
+            //    }
+            //}
+
+
+
+            if (clickedButton.IsPressed == true  )
+            {
+                
+                buttonClickCount++;
+                
+                
+                
+            }
+            else if (buttonClickCount > totalships)
             {
                 MessageBox.Show("You have clicked on more than 10 buttons.", "Button Click Count", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else if (clickedButton.IsPressed == true)
+            {
+                
             }
             else
             {
                 clickedButton.Background = new SolidColorBrush(Colors.Gold);
+
             }
 
 
-            
+
+
+
         }
 
 
