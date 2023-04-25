@@ -24,6 +24,8 @@ namespace tic_tac_toe
         public Splashscreenos()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
