@@ -23,8 +23,8 @@
         <Canvas Background="SandyBrown" x:Name="RunningField" Grid.Row="1" KeyUp="KeyBoardUp" KeyDown="KeyBoardDown" Focusable="True">
             <Rectangle x:Name="Survivor" Height="30" Width="30" Fill="Black" Canvas.Left="500" Canvas.Top="200" Tag="User"/>
             <Rectangle Tag="Enemy" x:Name="Ball" Height="40" Width="40" Fill="White" Canvas.Left="900" Canvas.Top="150" ></Rectangle>
-            <Rectangle Tag="Enemy" x:Name="BallKolega" Height="40" Width="40" Fill="White" Canvas.Left="450" Canvas.Top="150" ></Rectangle>
-            
+            <Rectangle  Tag="Enemy" x:Name="BallKolega" Height="40" Width="40" Fill="White" Canvas.Left="450" Canvas.Top="150" ></Rectangle>
+
         </Canvas>
     </Grid>
 </Window>

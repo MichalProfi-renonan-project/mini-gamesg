@@ -20,8 +20,11 @@ namespace tic_tac_toe
     /// </summary>
     public partial class Survival : Window
     {
-
+        List<Rectangle> Enemies;
+        
         private DispatcherTimer GameTimer = new DispatcherTimer();
+        private DispatcherTimer ballSpawnTimer = new DispatcherTimer();
+        private Random random = new Random();
         private bool UpKeyPressed, DownKeyPressed, LeftKeyPressed, RightKeyPressed;
         private float SpeedX = 8, SpeedY = 8;
         private int BallSpeedx = 8;
@@ -48,10 +51,35 @@ namespace tic_tac_toe
             GameTimer.Interval = TimeSpan.FromMilliseconds(16);
             GameTimer.Tick += GameTick;
             GameTimer.Start();
+            ballSpawnTimer.Interval = TimeSpan.FromSeconds(5);
+            ballSpawnTimer.Tick += BallSpawnTimer_Tick;
+            ballSpawnTimer.Start();
         }
 
-        
+        private void BallSpawnTimer_Tick(object sender, EventArgs e)
+        {
+            // Create a new instance of the Ball rectangle
+            Rectangle newBall = new Rectangle();
+            newBall.Width = 40;
+            newBall.Height = 40;
+            newBall.Fill = Brushes.White;
+            Canvas.SetLeft(newBall, random.Next(0, (int)RunningField.ActualWidth - (int)newBall.Width));
+            Canvas.SetTop(newBall, random.Next(0, (int)RunningField.ActualHeight - (int)newBall.Height));
+            newBall.Tag = "Enemy";
+            RunningField.Children.Add(newBall);
 
+            // Create a new instance of the BallKolega rectangle
+            Rectangle newBallKolega = new Rectangle();
+            newBallKolega.Width = 40;
+            newBallKolega.Height = 40;
+            newBallKolega.Fill = Brushes.White;
+            Canvas.SetLeft(newBallKolega, random.Next(0, (int)RunningField.ActualWidth - (int)newBallKolega.Width));
+            Canvas.SetTop(newBallKolega, random.Next(0, (int)RunningField.ActualHeight - (int)newBallKolega.Height));
+            newBallKolega.Tag = "Enemy";
+            RunningField.Children.Add(newBallKolega);
+
+            
+        }
         private void KeyBoardDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)

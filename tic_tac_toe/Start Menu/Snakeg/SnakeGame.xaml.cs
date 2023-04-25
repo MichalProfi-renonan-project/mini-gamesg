@@ -45,7 +45,7 @@ namespace tic_tac_toe
             InitializeComponent();
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
-       
+            
         }
 
         protected override void OnContentRendered(EventArgs e)
