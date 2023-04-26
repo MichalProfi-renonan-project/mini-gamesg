@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Threading;
 
 namespace tic_tac_toe
 {
@@ -22,6 +23,7 @@ namespace tic_tac_toe
     {
         List<Button> playerPositionButtons;
         List<Button> enemyPositionButtons;
+        DispatcherTimer EnemyPlayTimer = new DispatcherTimer();
 
         Random rand = new Random();
 
@@ -31,7 +33,8 @@ namespace tic_tac_toe
         int playerscore;
         int enemyscore;
         int times;
-        
+        int round = 10;
+
         public boats()
         {
             InitializeComponent();
@@ -40,6 +43,14 @@ namespace tic_tac_toe
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
 
+            EnemyPlayTimer.Interval = TimeSpan.FromMilliseconds(16);
+            EnemyPlayTimer.Tick += EnemyPlayTimerEvent;
+            EnemyPlayTimer.Start();
+        }
+
+        private void EnemyPlayTimerEvent(object sender, EventArgs e)
+        {
+            
         }
 
         private void RestartGame()
@@ -63,15 +74,68 @@ namespace tic_tac_toe
                 playerPositionButtons[i].IsEnabled = true;
                 playerPositionButtons[i].Tag = null;
             }
+
+            playerscore = 0;
+            enemyscore = 0;
+            round = 10;
+
+            txtPlayer.Content = playerscore.ToString();
+            txtEnemy.Content = enemyscore.ToString();
+            EnemyMove.Content = "A1";
+
+            btnFire.IsEnabled = false;
+
+            enemyLocationPicker();
         }
 
-        
+        private void enemyLocationPicker()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                int index = rand.Next(enemyPositionButtons.Count);
+
+                if (enemyPositionButtons[index].IsEnabled == true && (string)enemyPositionButtons[index].Tag == null)
+                {
+                    enemyPositionButtons[index].Tag = "enemyShip";
+
+                    Debug.WriteLine("Enemy Position: " + enemyPositionButtons[index].Content);
+                }
+                else
+                {
+                    index = rand.Next(enemyPositionButtons.Count);
+                }
+            }
+        }
 
         private void Button_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             ChoosingGame back = new ChoosingGame();
             back.Show();
+        }
+
+        private void FireButtonEvent(object sender, RoutedEventArgs e)
+        {
+
+        }
+       
+        private void PlayerPositionButtonsEvent(object sender, RoutedEventArgs e)
+        {
+            if (totalships > 0)
+            {
+                var button = (Button)sender;
+
+                button.IsEnabled = false;
+                button.Tag = "playerShip";
+                button.Background = Brushes.Orange;
+                totalships -= 1;
+            }
+            if (totalships == 0)
+            {
+                btnFire.IsEnabled = true;
+                btnFire.Background = Brushes.Red;
+                btnFire.Foreground = Brushes.White;
+            }
         }
     }
 }
