@@ -127,7 +127,7 @@ namespace tic_tac_toe
 
                 button.IsEnabled = false;
                 button.Tag = "playerShip";
-                button.Background = Brushes.Orange;
+                button.Foreground = Brushes.Orange;
                 totalships -= 1;
             }
             if (totalships == 0)
