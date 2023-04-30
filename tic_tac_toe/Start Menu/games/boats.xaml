@@ -438,6 +438,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label x:Name="EnemyMove" Content="A1" Foreground="Black" Background="White" Grid.Column="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" FontWeight="Bold" FontSize="16"/>
+            <Label Foreground="White" x:Name="txtRound" Background="Black" Content="Round: 10" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="90"/>
         </Grid>
 
 

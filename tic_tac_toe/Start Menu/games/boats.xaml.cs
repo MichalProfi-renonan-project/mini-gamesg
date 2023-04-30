@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Threading;
+
 
 namespace tic_tac_toe
 {
@@ -117,6 +117,42 @@ namespace tic_tac_toe
         private void FireButtonEvent(object sender, RoutedEventArgs e)
         {
 
+            if (EnemyLocationListBox.Text != "")
+            {
+                var firePosition = EnemyLocationListBox.Text;
+                Console.WriteLine("TU DOLE");
+                Console.WriteLine(firePosition);
+                int index = enemyPositionButtons.FindIndex(a => a.Name == firePosition);
+
+                if (index > 0)
+                {
+                    if (enemyPositionButtons[index].IsEnabled && round > 0)
+                    {
+                        round -= 1;
+                        txtRound.Content = "Round: " + round;
+
+
+                        if ((string)enemyPositionButtons[index].Tag == "enemyShip")
+                        {
+                            enemyPositionButtons[index].IsEnabled = false;
+                            enemyPositionButtons[index].Background = Brushes.Red;
+                            playerscore += 1;
+                            txtPlayer.Content = playerscore.ToString();
+                            EnemyPlayTimer.Start();
+                        }
+                        else
+                        {
+                            enemyPositionButtons[index].IsEnabled = false;
+                            enemyPositionButtons[index].Background = Brushes.Red;
+                            EnemyPlayTimer.Start();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Choose a location of your attack first", "Information");
+                }
+            }
         }
        
         private void PlayerPositionButtonsEvent(object sender, RoutedEventArgs e)
