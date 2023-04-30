@@ -28,12 +28,9 @@ namespace tic_tac_toe
         Random rand = new Random();
 
         int totalships = 10;
-        int buttonClickCount = 0;
-        private bool firstTime = true;
         int playerscore;
         int enemyscore;
-        int times;
-        int round = 10;
+        int round = 31;
 
         public boats()
         {
@@ -50,8 +47,56 @@ namespace tic_tac_toe
 
         private void EnemyPlayTimerEvent(object sender, EventArgs e)
         {
+            if (playerPositionButtons.Count > 0 && round > 0)
+            {
+                round -= 1;
+
+                txtRound.Content = "Round: " + round;
+
+                int index = rand.Next(playerPositionButtons.Count);
+
+                if ((string)playerPositionButtons[index].Tag == "playerShip")
+                {
+                    playerPositionButtons[index].Background = Brushes.Red;
+                    EnemyMove.Content = playerPositionButtons[index].Content;
+                    playerPositionButtons[index].IsEnabled = false;
+                    playerPositionButtons.RemoveAt(index);
+                    enemyscore += 1;
+                    txtEnemy.Content = enemyscore.ToString();
+                    EnemyPlayTimer.Stop();
+                }
+                else
+                {
+                    playerPositionButtons[index].Background = Brushes.Blue;
+                    EnemyMove.Content = playerPositionButtons[index].Content;
+                    playerPositionButtons[index].IsEnabled = false;
+                    playerPositionButtons.RemoveAt(index);
+                    txtEnemy.Content = enemyscore.ToString();
+                    EnemyPlayTimer.Stop();
+                }
+                
+            }
+
             
+            
+            if (round == 0 && playerscore > enemyscore)
+            {
+                MessageBox.Show("You Win!", "Winning");
+                RestartGame();
+            }
+            else if (round == 0 && enemyscore > playerscore)
+            {
+                MessageBox.Show("You are the worst captain I have ever seen!", "Lost");
+                RestartGame();
+            }
+            else if (round == 0 && playerscore == enemyscore)
+            {
+                MessageBox.Show("No one wins this battle captain!", "Draw");
+                RestartGame();
+            }
+
         }
+
 
         private void RestartGame()
         {
@@ -77,7 +122,7 @@ namespace tic_tac_toe
 
             playerscore = 0;
             enemyscore = 0;
-            round = 10;
+            round = 31;
 
             txtPlayer.Content = playerscore.ToString();
             txtEnemy.Content = enemyscore.ToString();
@@ -120,16 +165,13 @@ namespace tic_tac_toe
             if (EnemyLocationListBox.Text != "")
             {
                 var firePosition = EnemyLocationListBox.Text;
-                Console.WriteLine("TU DOLE");
-                Console.WriteLine(firePosition);
+
                 int index = enemyPositionButtons.FindIndex(a => a.Name == firePosition);
 
                 if (index > 0)
                 {
                     if (enemyPositionButtons[index].IsEnabled && round > 0)
                     {
-                        round -= 1;
-                        txtRound.Content = "Round: " + round;
 
 
                         if ((string)enemyPositionButtons[index].Tag == "enemyShip")
