@@ -63,125 +63,125 @@
 
             <Label x:Name="txtPlayer" Grid.Column="0" Grid.Row="0" Background="Black" Content="00" FontWeight="Bold" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-            <Button Margin="1" Grid.Column="1" Grid.Row="1" Background="White" x:Name="A1" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="1" Grid.Row="1" Background="White" x:Name="A1" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA1"/>
             </Button>
-            <Button Margin="1" Grid.Column="2" Grid.Row="1" Background="White" x:Name="A2" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="2" Grid.Row="1" Background="White" x:Name="A2" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA2"/>
             </Button>
-            <Button Margin="1" Grid.Column="3" Grid.Row="1" Background="White" x:Name="A3" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="3" Grid.Row="1" Background="White" x:Name="A3" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA3"/>
             </Button>
-            <Button Margin="1" Grid.Column="4" Grid.Row="1" Background="White" x:Name="A4" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="4" Grid.Row="1" Background="White" x:Name="A4" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA4"/>
             </Button>
-            <Button Margin="1" Grid.Column="5" Grid.Row="1" Background="White" x:Name="A5" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="5" Grid.Row="1" Background="White" x:Name="A5" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA5"/>
             </Button>
-            <Button Margin="1" Grid.Column="6" Grid.Row="1" Background="White" x:Name="A6" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="6" Grid.Row="1" Background="White" x:Name="A6" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA6"/>
             </Button>
-            <Button Margin="1" Grid.Column="7" Grid.Row="1" Background="White" x:Name="A7" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="7" Grid.Row="1" Background="White" x:Name="A7" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA7"/>
             </Button>
-            <Button Margin="1" Grid.Column="8" Grid.Row="1" Background="White" x:Name="A8" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="8" Grid.Row="1" Background="White" x:Name="A8" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblA8"/>
             </Button>
 
-            <Button Margin="1" Grid.Column="1" Grid.Row="2" Background="White" x:Name="B1" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="1" Grid.Row="2" Background="White" x:Name="B1" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB1"/>
             </Button>
-            <Button Margin="1" Grid.Column="2" Grid.Row="2" Background="White" x:Name="B2" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="2" Grid.Row="2" Background="White" x:Name="B2" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB2"/>
             </Button>
-            <Button Margin="1" Grid.Column="3" Grid.Row="2" Background="White" x:Name="B3" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="3" Grid.Row="2" Background="White" x:Name="B3" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB3"/>
             </Button>
-            <Button Margin="1" Grid.Column="4" Grid.Row="2" Background="White" x:Name="B4" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="4" Grid.Row="2" Background="White" x:Name="B4" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB4"/>
             </Button>
-            <Button Margin="1" Grid.Column="5" Grid.Row="2" Background="White" x:Name="B5" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="5" Grid.Row="2" Background="White" x:Name="B5" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB5"/>
             </Button>
-            <Button Margin="1" Grid.Column="6" Grid.Row="2" Background="White" x:Name="B6" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="6" Grid.Row="2" Background="White" x:Name="B6" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB6"/>
             </Button>
-            <Button Margin="1" Grid.Column="7" Grid.Row="2" Background="White" x:Name="B7" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="7" Grid.Row="2" Background="White" x:Name="B7" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB7"/>
             </Button>
-            <Button Margin="1" Grid.Column="8" Grid.Row="2" Background="White" x:Name="B8" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="8" Grid.Row="2" Background="White" x:Name="B8" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblB8"/>
             </Button>
 
-            <Button Margin="1" Grid.Column="1" Grid.Row="3" Background="White" x:Name="C1" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="1" Grid.Row="3" Background="White" x:Name="C1" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC1"/>
             </Button>
-            <Button Margin="1" Grid.Column="2" Grid.Row="3" Background="White" x:Name="C2" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="2" Grid.Row="3" Background="White" x:Name="C2" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC2"/>
             </Button>
-            <Button Margin="1" Grid.Column="3" Grid.Row="3" Background="White" x:Name="C3" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="3" Grid.Row="3" Background="White" x:Name="C3" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC3"/>
             </Button>
-            <Button Margin="1" Grid.Column="4" Grid.Row="3" Background="White" x:Name="C4" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="4" Grid.Row="3" Background="White" x:Name="C4" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC4"/>
             </Button>
-            <Button Margin="1" Grid.Column="5" Grid.Row="3" Background="White" x:Name="C5" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="5" Grid.Row="3" Background="White" x:Name="C5" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC5"/>
             </Button>
-            <Button Margin="1" Grid.Column="6" Grid.Row="3" Background="White" x:Name="C6" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="6" Grid.Row="3" Background="White" x:Name="C6" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC6"/>
             </Button>
-            <Button Margin="1" Grid.Column="7" Grid.Row="3" Background="White" x:Name="C7" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="7" Grid.Row="3" Background="White" x:Name="C7" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC7"/>
             </Button>
-            <Button Margin="1" Grid.Column="8" Grid.Row="3" Background="White" x:Name="C8" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="8" Grid.Row="3" Background="White" x:Name="C8" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblC8"/>
             </Button>
 
-            <Button Margin="1" Grid.Column="1" Grid.Row="4" Background="White" x:Name="D1" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="1" Grid.Row="4" Background="White" x:Name="D1" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD1"/>
             </Button>
-            <Button Margin="1" Grid.Column="2" Grid.Row="4" Background="White" x:Name="D2" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="2" Grid.Row="4" Background="White" x:Name="D2" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD2"/>
             </Button>
-            <Button Margin="1" Grid.Column="3" Grid.Row="4" Background="White" x:Name="D3" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="3" Grid.Row="4" Background="White" x:Name="D3" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD3"/>
             </Button>
-            <Button Margin="1" Grid.Column="4" Grid.Row="4" Background="White" x:Name="D4" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="4" Grid.Row="4" Background="White" x:Name="D4" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD4"/>
             </Button>
-            <Button Margin="1" Grid.Column="5" Grid.Row="4" Background="White" x:Name="D5" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="5" Grid.Row="4" Background="White" x:Name="D5" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD5"/>
             </Button>
-            <Button Margin="1" Grid.Column="6" Grid.Row="4" Background="White" x:Name="D6" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="6" Grid.Row="4" Background="White" x:Name="D6" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD6"/>
             </Button>
-            <Button Margin="1" Grid.Column="7" Grid.Row="4" Background="White" x:Name="D7" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="7" Grid.Row="4" Background="White" x:Name="D7" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD7"/>
             </Button>
-            <Button Margin="1" Grid.Column="8" Grid.Row="4" Background="White" x:Name="D8" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="8" Grid.Row="4" Background="White" x:Name="D8" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblD8"/>
             </Button>
 
-            <Button Margin="1" Grid.Column="1" Grid.Row="5" Background="White" x:Name="E1" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="1" Grid.Row="5" Background="White" x:Name="E1" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE1"/>
             </Button>
-            <Button Margin="1" Grid.Column="2" Grid.Row="5" Background="White" x:Name="E2" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="2" Grid.Row="5" Background="White" x:Name="E2" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE2"/>
             </Button>
-            <Button Margin="1" Grid.Column="3" Grid.Row="5" Background="White" x:Name="E3" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="3" Grid.Row="5" Background="White" x:Name="E3" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE3"/>
             </Button>
-            <Button Margin="1" Grid.Column="4" Grid.Row="5" Background="White" x:Name="E4" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="4" Grid.Row="5" Background="White" x:Name="E4" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE4"/>
             </Button>
-            <Button Margin="1" Grid.Column="5" Grid.Row="5" Background="White" x:Name="E5" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="5" Grid.Row="5" Background="White" x:Name="E5" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE5"/>
             </Button>
-            <Button Margin="1" Grid.Column="6" Grid.Row="5" Background="White" x:Name="E6" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="6" Grid.Row="5" Background="White" x:Name="E6" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE6"/>
             </Button>
-            <Button Margin="1" Grid.Column="7" Grid.Row="5" Background="White" x:Name="E7" Click="PlayerPositionButtonsEvent">
+            <Button Margin="1" Grid.Column="7" Grid.Row="5" Background="White" x:Name="E7" Click="PlayerPositionButtonsEvent" IsEnabledChanged="PlayerPositionButtonsEnableEvent">
                 <Label Height="60" Width="65" x:Name="lblE7"/>
             </Button>
             <Button Margin="1" Grid.Column="8" Grid.Row="5" Background="White" x:Name="E8" Click="PlayerPositionButtonsEvent">
