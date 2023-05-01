@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:tic_tac_toe" 
         mc:Ignorable="d"
         Title="ChoosingGame" Height="650" Width="1000" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True">
-    <Grid Background="Red">
+    <Grid Background="White">
 
 
 

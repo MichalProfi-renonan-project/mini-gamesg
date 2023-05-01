@@ -63,6 +63,24 @@ namespace tic_tac_toe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BOMBA {
+            get {
+                return ResourceManager.GetStream("BOMBA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream boomboom {
+            get {
+                return ResourceManager.GetStream("boomboom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream bouncesound {
             get {
                 return ResourceManager.GetStream("bouncesound", resourceCulture);
@@ -93,16 +111,6 @@ namespace tic_tac_toe.Properties {
         internal static System.IO.UnmanagedMemoryStream game_over {
             get {
                 return ResourceManager.GetStream("game_over", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hadik {
-            get {
-                object obj = ResourceManager.GetObject("Hadik", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

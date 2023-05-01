@@ -233,5 +233,11 @@
   <ItemGroup>
     <None Include="Resources\Hadik.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOMBA.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boomboom.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
