@@ -28,20 +28,91 @@ namespace tic_tac_toe
         int Winscircle = 0;
         int Winscross = 0;
 
-        List<Button> buttons = new List<Button>();
-        
-        public static List<Label> labels = new List<Label>();
+        public List<Button> buttons = new List<Button>();
+        public List<Label> labels = new List<Label>();
 
-        public Tictactoe()
+    public Tictactoe()
         {
             InitializeComponent();
+            Components();
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
             lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
         }
-        
+        static void lbgold(Label lbl)
+        {
+            lbl.Foreground = Brushes.Gold;
+        }
+
+        public void AddLabel(Label label)  
+        {
+            labels.Add(label);
+        }
+        public void AddButton(Button butt)
+        {
+            buttons.Add(butt);
+        }
+        public void Components()
+        {
+            AddLabel(lbl1);
+            AddLabel(lbl2);
+            AddLabel(lbl3);
+            AddLabel(lbl4);
+            AddLabel(lbl5);
+            AddLabel(lbl6);
+            AddLabel(lbl7);
+            AddLabel(lbl8);
+            AddLabel(lbl9);
+            AddButton(butt1);
+            AddButton(butt2);
+            AddButton(butt3);
+            AddButton(butt4);
+            AddButton(butt5);
+            AddButton(butt6);
+            AddButton(butt7);
+            AddButton(butt8);
+            AddButton(butt9);
+        }
+        public void crosswin()
+        {
+            MessageBox.Show("cross wins");
+            resetgame();
+            Winscross++;
+            lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+        }
+        public void circlewin()
+        {
+            MessageBox.Show("circle wins");
+            resetgame();
+            Winscircle++;
+            lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+        }
+        public void buttclicked(Label lbl, Button butt)
+        {
+
+
+            if (playercounter == 1)
+            {
+                lbl.Content = "X";
+                butt.Background = Brushes.White;
+                playercounter = 2;
+                clickscounter++;
+                WinChecker1();
+            }
+               
+            else if (playercounter == 2)
+            {
+                lbl.Content = "O";
+                butt.Background = Brushes.White;
+                playercounter = 1;
+                clickscounter++;
+                WinChecker1();
+            }
+        }
+
         private void WinChecker1()
         {
+
             if (clickscounter > 8)
             {
                 resetgame();
@@ -50,141 +121,93 @@ namespace tic_tac_toe
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
                    
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl4, lbl5, lbl6))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
 
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl7, lbl8, lbl9))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }    
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl1, lbl4, lbl7))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl2, lbl5, lbl8))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
                    
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl3, lbl6, lbl9))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
               
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl1, lbl5, lbl9))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
             if (WinChecker2(lbl3, lbl5, lbl7))
             {
                 if (playercounter == 2)
                 {
-                    MessageBox.Show("cross wins");
-                    resetgame();
-                    Winscross++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    crosswin();
                 }
 
                 else if (playercounter == 1)
                 {
-                    MessageBox.Show("circle wins");
-                    resetgame();
-                    Winscircle++;
-                    lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
+                    circlewin();
                 }
             }
         }
@@ -193,14 +216,16 @@ namespace tic_tac_toe
         {
             if (lbl1.Content != null && lbl2.Content != null && lbl3.Content != null && lbl1.Content == lbl2.Content && lbl2.Content == lbl3.Content)
             {
-                lbl1.Foreground = Brushes.Gold;
-                lbl2.Foreground = Brushes.Gold;
-                lbl3.Foreground = Brushes.Gold;
+
+                lbgold(labels[0]);
+                lbgold(lbl2);
+                lbgold(lbl3);
                 return true;
             }
             else
                 return false;
         }
+
         private void Butt1_Click(object sender, RoutedEventArgs e)
         {
 
@@ -208,26 +233,10 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl1.Content = "O";
-                butt1.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
-            }
-            else if (playercounter == 1)
-            {
-                lbl1.Content = "X";
-                butt1.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
-            }
-
-
-
-
+                buttclicked(lbl1, butt1);
+            } 
         }
 
         private void butt2_Click(object sender, RoutedEventArgs e)
@@ -237,26 +246,10 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl2.Content = "O";
-                butt2.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
-
+                buttclicked(lbl2, butt2);
             }
-            else if (playercounter == 1)
-            {
-                lbl2.Content = "X";
-                butt2.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
-            }
-
-
-
         }
 
         private void butt3_Click(object sender, RoutedEventArgs e)
@@ -266,52 +259,21 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl3.Content = "O";
-                butt3.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
-
+                buttclicked(lbl3, butt3);
             }
-            else if (playercounter == 1)
-            {
-                lbl3.Content = "X";
-                butt3.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
-            }
-
-
-
-
         }
-
         private void butt4_Click(object sender, RoutedEventArgs e)
         {
             if (lbl4.Content != null)
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl4.Content = "O";
-                butt4.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
+                buttclicked(lbl4, butt4);
             }
-            else if (playercounter == 1)
-            {
-                lbl4.Content = "X";
-                butt4.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
-            }
-
         }
         private void butt5_Click(object sender, RoutedEventArgs e)
         {
@@ -319,21 +281,9 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl5.Content = "O";
-                butt5.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
-            }
-            else if (playercounter == 1)
-            {
-                lbl5.Content = "X";
-                butt5.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
+                buttclicked(lbl5, butt5);
             }
         }
         private void butt6_Click(object sender, RoutedEventArgs e)
@@ -342,23 +292,10 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl6.Content = "O";
-                butt6.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
+                buttclicked(lbl6, butt6);
             }
-            else if (playercounter == 1)
-            {
-                lbl6.Content = "X";
-                butt6.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
-            }
-
         }
 
         private void butt7_Click(object sender, RoutedEventArgs e)
@@ -367,21 +304,9 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl7.Content = "O";
-                butt7.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
-            }
-            else if (playercounter == 1)
-            {
-                lbl7.Content = "X";
-                butt7.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
+                buttclicked(lbl7, butt7);
             }
         }
 
@@ -391,23 +316,10 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter == 2)
+            else
             {
-                lbl8.Content = "O";
-                butt8.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
+                buttclicked(lbl8, butt8);
             }
-            else if (playercounter == 1)
-            {
-                lbl8.Content = "X";
-                butt8.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
-            }
-
         }
 
         private void butt9_Click(object sender, RoutedEventArgs e)
@@ -417,53 +329,24 @@ namespace tic_tac_toe
             {
                 MessageBox.Show("error");
             }
-            else if (playercounter  == 2)
+            else
             {
-                lbl9.Content = "O";
-                butt9.Background = Brushes.White;
-                playercounter = 1;
-                clickscounter++;
-                WinChecker1();
-            }
-            else if (playercounter == 1)
-            {
-                lbl9.Content = "X";
-                butt9.Background = Brushes.White;
-                playercounter = 2;
-                clickscounter++;
-                WinChecker1();
+                buttclicked(lbl9, butt9);
             }
         }
         
         private void resetgame()
         {
-            butt1.Background = Brushes.Transparent;
-            butt2.Background = Brushes.Transparent;
-            butt3.Background = Brushes.Transparent;
-            butt4.Background = Brushes.Transparent;
-            butt5.Background = Brushes.Transparent;
-            butt6.Background = Brushes.Transparent;
-            butt7.Background = Brushes.Transparent;
-            butt8.Background = Brushes.Transparent;
-            butt9.Background = Brushes.Transparent;
-            lbl1.Foreground = Brushes.Black;
-            lbl2.Foreground = Brushes.Black;
-            lbl3.Foreground = Brushes.Black;
-            lbl4.Foreground = Brushes.Black;
-            lbl5.Foreground = Brushes.Black;
-            lbl6.Foreground = Brushes.Black;
-            lbl7.Foreground = Brushes.Black;
-            lbl8.Foreground = Brushes.Black;
-            lbl9.Foreground = Brushes.Black;
-            lbl1.Content = null;
-            lbl2.Content = null;
-            lbl3.Content = null;
-            lbl4.Content = null;
-            lbl5.Content = null;
-            lbl6.Content = null;
-            lbl7.Content = null;
-            lbl8.Content= null;
-            lbl9.Content = null;
+            foreach(Label lbl in labels)
+            {
+                lbl.Foreground = Brushes.Black;
+                lbl.Content = null;
+            }
+
+            foreach(Button btn in buttons)
+            {
+                btn.Background = Brushes.Transparent;
+            }
             playercounter = 1;
             clickscounter = 0;
         }
