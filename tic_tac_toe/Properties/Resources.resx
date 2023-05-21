@@ -3249,6 +3249,33 @@
         Bjn+q/qXAIMGJAQkBFQFxgFo//UCEQrhCPUCOf4kBAs=
 </value>
   </data>
+  <data name="Hot_dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\hot-dog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Oliver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\oliver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="patkan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\patkan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="patkan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\patkan2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\pes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="s0v1k3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\s0v1k3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uwu_cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\uwu_cat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vydra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\vydra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="what_if" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pexesopictures\what_if.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="you_suck" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAEAQAAABZTeXN0ZW0uSU8uTWVtb3J5U3RyZWFtCgAAAAdfYnVmZmVyB19v

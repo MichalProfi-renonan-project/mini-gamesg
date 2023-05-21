@@ -104,5 +104,12 @@ namespace tic_tac_toe
             Survival survival = new Survival();
             survival.Show();
         }
+
+        private void Button_pexeso_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Pexeso pexeso = new Pexeso();
+            pexeso.Show();
+        }
     }
 }

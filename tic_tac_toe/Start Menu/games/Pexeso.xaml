@@ -1,0 +1,76 @@
+﻿<Window x:Class="tic_tac_toe.Pexeso"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tic_tac_toe"
+        mc:Ignorable="d"
+        Title="Pexeso" Height="450" Width="800" WindowStyle="None">
+    <Grid x:Name="Pole">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Margin="0,20,0,0" Height="50" VerticalAlignment="Top" Grid.Row="0" x:Name="Button_back" Content="Back"  Click="Button_back_Click" FontSize="18" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}"/>
+            <Button Height="50" VerticalAlignment="Bottom" Grid.Row="0" Content="Start" Margin="0,0,0,30" FontWeight="Bold" FontSize="18" Background="Transparent" BorderBrush="Transparent"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" x:Name="LblTime" Content="00:60" Canvas.Left="206" Canvas.Top="-27" Foreground="White" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Background="Black"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Label>
+                <Image HorizontalAlignment="Left" Height="80" Margin="200,20,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Left" Height="80" Margin="80,20,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Center" Height="80" Margin="0,20,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Right" Height="80" Margin="0,20,80,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Right" Height="80" Margin="0,20,200,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Left" Height="80" Margin="80,110,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Left" Height="80" Margin="200,110,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Center" Height="80" Margin="0,110,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Right" Height="80" Margin="0,110,80,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Right" Height="80" Margin="0,110,200,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Left" Height="80" Margin="80,200,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Left" Height="80" Margin="200,200,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Center" Height="80" Margin="0,200,0,0" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Right" Height="80" Margin="0,200,0,80" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Right" Height="80" Margin="0,200,0,200" VerticalAlignment="Top" Width="80"/>
+            </Label>
+            <Label>
+                <Image HorizontalAlignment="Center" Height="80" Margin="0,310,0,0" VerticalAlignment="Top" Width="80" />
+            </Label>
+        </Grid>
+
+    </Grid>
+</Window>
