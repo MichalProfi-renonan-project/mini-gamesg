@@ -18,57 +18,57 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button Margin="0,20,0,0" Height="50" VerticalAlignment="Top" Grid.Row="0" x:Name="Button_back" Content="Back"  Click="Button_back_Click" FontSize="18" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}"/>
-            <Button Height="50" VerticalAlignment="Bottom" Grid.Row="0" Content="Start" Margin="0,0,0,30" FontWeight="Bold" FontSize="18" Background="Transparent" BorderBrush="Transparent"/>
+            <Button Height="50" VerticalAlignment="Bottom" Grid.Row="0" Content="Start" Margin="0,0,0,30" FontWeight="Bold" FontSize="18" Background="Transparent" BorderBrush="Transparent" Click="startGame" x:Name="Start"/>
             <Label VerticalAlignment="Center" Grid.Row="1" x:Name="LblTime" Content="00:60" Canvas.Left="206" Canvas.Top="-27" Foreground="White" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Background="Black"/>
         </Grid>
         <Grid Grid.Column="1">
-            <Label>
-                <Image HorizontalAlignment="Left" Height="80" Margin="200,20,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Left" Height="80" Margin="200,20,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage" />
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Left" Height="80" Margin="80,20,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Left" Height="80" Margin="80,20,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Center" Height="80" Margin="0,20,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Center" Height="80" Margin="0,20,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Right" Height="80" Margin="0,20,80,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Right" Height="80" Margin="0,20,80,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Right" Height="80" Margin="0,20,200,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Right" Height="80" Margin="0,20,200,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Left" Height="80" Margin="80,110,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Left" Height="80" Margin="80,110,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Left" Height="80" Margin="200,110,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Left" Height="80" Margin="200,110,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Center" Height="80" Margin="0,110,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Center" Height="80" Margin="0,110,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Right" Height="80" Margin="0,110,80,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Right" Height="80" Margin="0,110,80,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Right" Height="80" Margin="0,110,200,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Right" Height="80" Margin="0,110,200,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Left" Height="80" Margin="80,200,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Left" Height="80" Margin="80,200,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Left" Height="80" Margin="200,200,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Left" Height="80" Margin="200,200,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Center" Height="80" Margin="0,200,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Center" Height="80" Margin="0,200,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Right" Height="80" Margin="0,200,0,80" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Right" Height="80" Margin="0,200,0,80" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Right" Height="80" Margin="0,200,0,200" VerticalAlignment="Top" Width="80"/>
+            <Label HorizontalAlignment="Right" Height="80" Margin="0,200,0,200" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
-            <Label>
-                <Image HorizontalAlignment="Center" Height="80" Margin="0,310,0,0" VerticalAlignment="Top" Width="80" />
+            <Label HorizontalAlignment="Center" Height="80" Margin="0,310,0,0" VerticalAlignment="Top" Width="80">
+                <Image Height="80" Width="80" MouseDown="clickImage"/>
             </Label>
         </Grid>
 

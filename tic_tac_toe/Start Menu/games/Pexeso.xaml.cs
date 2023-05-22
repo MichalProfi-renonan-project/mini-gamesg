@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Timers;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,9 +23,10 @@ namespace tic_tac_toe
         bool allowClick = false;
         Image firstGuess;
         Random rnd = new Random();
-        Timer clickTimer = new Timer();
+        DispatcherTimer clickTimer = new DispatcherTimer();
         int time = 60;
-        Timer timer = new Timer {Interval = 1000 };
+        DispatcherTimer timer = new DispatcherTimer();
+        
         
         public Pexeso()
         {
@@ -34,6 +34,8 @@ namespace tic_tac_toe
 
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
+
+            timer.Interval = TimeSpan.FromSeconds(1);
         }
         private Image[] immages
         {
@@ -60,7 +62,7 @@ namespace tic_tac_toe
         private void startGameTimer()
         {
             timer.Start();
-            timer.Elapsed += delegate
+            timer.Tick += delegate
             {
                 time--;
                 if (time < 0)
@@ -111,7 +113,18 @@ namespace tic_tac_toe
         }
         private void setRandomImages()
         {
-            throw new NotImplementedException();
+            foreach (var image in images)
+            {
+                getFreeSlot().Tag = image;
+                getFreeSlot().Tag = image;
+            }
+        }
+        private void CLICKTIMER_TICK(object sender, EventArgs e)
+        {
+            HideImages();
+
+            allowClick = true;
+            clickTimer.Stop();
         }
 
         private void Button_back_Click(object sender, RoutedEventArgs e)
@@ -119,6 +132,52 @@ namespace tic_tac_toe
             this.Close();
             ChoosingGame back = new ChoosingGame();
             back.Show();
+        }
+
+        private void clickImage(object sender, MouseButtonEventArgs e)
+        {
+            if (!allowClick) return;
+
+            var pic = (Image)sender;
+
+            if (firstGuess == null)
+            {
+                firstGuess = pic;
+                pic.Source = (ImageSource)pic.Tag;
+                return;
+            }
+
+            pic.Source = (ImageSource)pic.Tag;
+
+            if (pic.Source == firstGuess.Source && pic != firstGuess)
+            {
+                pic.Visibility = firstGuess.Visibility = Visibility.Hidden;
+                {
+                    firstGuess = pic;
+                }
+                HideImages();
+            }
+            else
+            {
+                allowClick = false;
+                clickTimer.Start();
+            }
+
+            firstGuess = null;
+            if (immages.Any(p => p.Visibility == Visibility.Visible)) return;
+            MessageBox.Show("You win! Now try again");
+            ResetImages();
+        }
+
+        private void startGame(object sender, RoutedEventArgs e)
+        {
+            allowClick = true;
+            setRandomImages();
+            HideImages();
+            startGameTimer();
+            clickTimer.Interval = TimeSpan.FromSeconds(1);
+            clickTimer.Tick += CLICKTIMER_TICK;
+            Start.IsEnabled = false;
         }
     }
 }
