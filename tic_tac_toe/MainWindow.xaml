@@ -66,11 +66,11 @@
     </Window.Resources>
     <Grid>
         <Image  x:Name="backg" gif:AnimationBehavior.SourceUri="../Pictures/synthwaveback.gif" Stretch="UniformToFill"/>
-        <S x:Name="Button_Start" FontFamily="Outrun future" Content="Start" Width="500" Height="70" Margin="150,282,150,0" VerticalAlignment="Top" Click="Button_Click" FontSize="24">
+        <Button x:Name="Button_Start" FontFamily="Outrun future" Content="Start" Width="500" Height="70" Margin="150,282,150,0" VerticalAlignment="Top" Click="Button_Click" FontSize="24">
             <Button.Background>
                 <ImageBrush ImageSource="C:\Users\Roman\source\repos\mini-gamesggs\tic_tac_toe\Pictures\synthbutt.jpeg" Stretch="Fill" />
             </Button.Background>
-        </S>
+        </Button>
         <Button x:Name="Button_exit" Content="Exit" HorizontalAlignment="Center" Height="70" Margin="0,377,0,0" VerticalAlignment="Top"  Width="500" Click="Button_exit_Click" BorderBrush="#00000000" FontFamily="Outrun future" FontSize="24">
             <Button.Background>
                 <ImageBrush ImageSource="C:\Users\Roman\source\repos\mini-gamesggs\tic_tac_toe\Pictures\synthbutt.jpeg" Stretch="Fill" />
