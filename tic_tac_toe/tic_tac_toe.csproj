@@ -54,6 +54,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -69,6 +72,12 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+    <Reference Include="XamlAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=20a987d8023d9690, processorArchitecture=MSIL">
+      <HintPath>..\packages\XamlAnimatedGif.2.1.1\lib\net45\XamlAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -172,6 +181,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="font\Outrun future Bold Italic.otf" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -249,7 +260,9 @@
   <ItemGroup>
     <Resource Include="Pictures\lopta.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Pictures\synthwavebackg.gif" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="PexesoPictures\Oliver.png" />
   </ItemGroup>
@@ -277,5 +290,12 @@
   <ItemGroup>
     <Resource Include="PexesoPictures\what_if.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\synthbackground.mpeg" />
+    <Content Include="Pictures\synthback.mp4" />
+    <Resource Include="Pictures\synthbutt.jpeg" />
+    <Resource Include="Pictures\synthwaveback.gif" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
