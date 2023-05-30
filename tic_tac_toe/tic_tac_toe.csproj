@@ -291,8 +291,6 @@
     <Resource Include="PexesoPictures\what_if.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pictures\synthbackground.mpeg" />
-    <Content Include="Pictures\synthback.mp4" />
     <Resource Include="Pictures\synthbutt.jpeg" />
     <Resource Include="Pictures\synthwaveback.gif" />
   </ItemGroup>

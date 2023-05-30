@@ -18,6 +18,8 @@ namespace tic_tac_toe
             rect.Width = size;
             rect.Height = size;
             rect.Fill = Brushes.Chartreuse;
+            rect.RadiusX = size / 2;
+            rect.RadiusY = size / 2;
             UIElement = rect;
         }
         

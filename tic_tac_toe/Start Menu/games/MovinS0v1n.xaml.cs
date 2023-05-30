@@ -22,6 +22,12 @@ namespace tic_tac_toe
     public partial class MovinS0v1n : Window
     {
         private DispatcherTimer GameTimer = new DispatcherTimer();
+        DispatcherTimer _timer;
+        TimeSpan _time;
+        private DispatcherTimer ballSpawnTimer = new DispatcherTimer();
+        private Random random = new Random();
+        private int score = 1;
+        DispatcherTimer timer = new DispatcherTimer();
         private bool UpKeyPressed, DownKeyPressed, LeftKeyPressed, RightKeyPressed;
         private float SpeedX = 6, SpeedY = 6;
         private int BoxSpeedx = 6;
@@ -80,63 +86,71 @@ namespace tic_tac_toe
             GameTimer.Interval = TimeSpan.FromMilliseconds(16);
             GameTimer.Tick += GameTick;
             GameTimer.Start();
+            ballSpawnTimer.Interval = TimeSpan.FromSeconds(5);
+            ballSpawnTimer.Tick += BallSpawnTimer_Tick;
+            ballSpawnTimer.Start();
+
+
+            _time = TimeSpan.FromSeconds(60);
+
+            _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                LblTime.Text = _time.ToString("c");
+                if (_time == TimeSpan.Zero) _timer.Stop();
+                _time = _time.Add(TimeSpan.FromSeconds(-1));
+            }, Application.Current.Dispatcher);
+
+            _timer.Start();
         }
+
+
+
+        private void BallSpawnTimer_Tick(object sender, EventArgs e)
+        {
+            // Create a new instance of the Ball rectangle
+            Rectangle newBall = new Rectangle();
+            newBall.Width = 40;
+            newBall.Height = 40;
+            newBall.Fill = Brushes.White;
+            Canvas.SetLeft(newBall, random.Next(0, (int)Gamescreen.ActualWidth - (int)newBall.Width));
+            Canvas.SetTop(newBall, random.Next(0, (int)Gamescreen.ActualHeight - (int)newBall.Height));
+            newBall.Tag = "Enemy";
+            Gamescreen.Children.Add(newBall);
+
+            // Create a new instance of the BallKolega rectangle
+            Rectangle newBallKolega = new Rectangle();
+            newBallKolega.Width = 40;
+            newBallKolega.Height = 40;
+            newBallKolega.Fill = Brushes.White;
+            Canvas.SetLeft(newBallKolega, random.Next(0, (int)Gamescreen.ActualWidth - (int)newBallKolega.Width));
+            Canvas.SetTop(newBallKolega, random.Next(0, (int)Gamescreen.ActualHeight - (int)newBallKolega.Height));
+            newBallKolega.Tag = "Enemy";
+            Gamescreen.Children.Add(newBallKolega);
+
+
+        }
+
 
         private void GameTick(object sender, EventArgs e)
         {
             if (LeftKeyPressed == true && Canvas.GetLeft(Player) > 0)
             {
-                Canvas.SetLeft(Player, Canvas.GetLeft(Player) - SpeedX);                
+                Canvas.SetLeft(Player, Canvas.GetLeft(Player) - SpeedX);
             }
             if (RightKeyPressed == true && Canvas.GetLeft(Player) + (Player.Width + 10) < Application.Current.MainWindow.Width)
             {
-                Canvas.SetLeft(Player, Canvas.GetLeft(Player) + SpeedX);                
+                Canvas.SetLeft(Player, Canvas.GetLeft(Player) + SpeedX);
             }
-            
+
             if (UpKeyPressed == true && Canvas.GetTop(Player) > 0)
             {
-                Canvas.SetTop(Player, Canvas.GetTop(Player) - SpeedY);                
+                Canvas.SetTop(Player, Canvas.GetTop(Player) - SpeedY);
             }
             if (DownKeyPressed == true && Canvas.GetTop(Player) + (Player.Height - 20) < Application.Current.MainWindow.Height)
             {
-                Canvas.SetTop(Player, Canvas.GetTop(Player) + SpeedY);               
+                Canvas.SetTop(Player, Canvas.GetTop(Player) + SpeedY);
             }
 
-            Canvas.SetLeft(Box, Canvas.GetLeft(Box) - BoxSpeedx);
-
-            if (Canvas.GetLeft(Box) < 0 || Canvas.GetLeft(Box) + (Box.Width * 2) > Application.Current.MainWindow.Width)
-            {
-                BoxSpeedx = -BoxSpeedx;
-            }
-
-            Canvas.SetTop(Box, Canvas.GetTop(Box) - BoxSpeedy);
-
-            if (Canvas.GetTop(Box) < 0 || Canvas.GetTop(Box) + (Box.Height * 2) > Application.Current.MainWindow.Height)
-            {
-                BoxSpeedy = -BoxSpeedy;
-            }
-
-
-
-            
-
-            foreach (var Player in Gamescreen.Children.OfType<Rectangle>())
-            {
-                if ((string)Player.Tag == "User")
-                {
-                    Player.Stroke = Brushes.Black;
-
-                    Rect boxHitBox = new Rect(Canvas.GetLeft(Box), Canvas.GetTop(Box), Box.Width, Box.Height);
-                    Rect PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
-
-                    if (boxHitBox.IntersectsWith(PlayerHitBox))
-                    {
-                        BoxSpeedx = -BoxSpeedx;
-                        BoxSpeedy = -BoxSpeedy;
-                    }
-
-                }
-            }
         }
 
         private void Button_back_Click(object sender, RoutedEventArgs e)

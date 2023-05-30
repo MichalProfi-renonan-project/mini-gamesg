@@ -103,14 +103,14 @@ namespace tic_tac_toe
 
 
 
-                if (round == 0 && playerscore > enemyscore)
+                if (round == 0 && playerscore > enemyscore || playerscore == 10)
                 {
                     MessageBox.Show("You Win!", "Winning");
                     this.Close();
                     ChoosingGame back = new ChoosingGame();
                     back.Show();
                 }
-                else if (round == 0 && enemyscore > playerscore)
+                else if (round == 0 && enemyscore > playerscore || enemyscore == 10)
                 {
                     MessageBox.Show("You are the worst captain I have ever seen!", "Lost");
                     this.Close();

@@ -23,10 +23,10 @@ namespace tic_tac_toe
     public partial class PongGame : Window
     {
         private DispatcherTimer GameTimer = new DispatcherTimer();
-        private float SpeedY = 6;
+        private float SpeedY = 10;
         private bool UpKeyPressed, DownKeyPressed, UpKeyPressed1, DownKeyPressed1;
-        private int BallSpeedx = 7;
-        private int BallSpeedy = 9;
+        private int BallSpeedx = 14;
+        private int BallSpeedy = 18;
         int score = 0;
         int score1 = 0;
 
