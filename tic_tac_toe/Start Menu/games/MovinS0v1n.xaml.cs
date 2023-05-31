@@ -151,6 +151,7 @@ namespace tic_tac_toe
                 Canvas.SetTop(Player, Canvas.GetTop(Player) + SpeedY);
             }
 
+
         }
 
         private void Button_back_Click(object sender, RoutedEventArgs e)

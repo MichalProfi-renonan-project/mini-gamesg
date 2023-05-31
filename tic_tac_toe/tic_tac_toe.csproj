@@ -294,6 +294,8 @@
     <Resource Include="Pictures\synthbutt.jpeg" />
     <Resource Include="Pictures\synthwaveback.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Pictures\red cube.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

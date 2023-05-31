@@ -103,13 +103,16 @@ namespace tic_tac_toe
         private Image getFreeSlot()
         {
             int num;
-
+            int daco = 0;
             do
             {
                 num = rnd.Next(0, immages.Count());
+                Console.WriteLine(num);
+                
             }
-            while (immages[num].Tag != null);
+            while (daco<2);
             return immages[num];
+            daco++;
         }
         private void setRandomImages()
         {

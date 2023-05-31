@@ -23,7 +23,7 @@
 
         <Button x:Name="Button_movesquare" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="90" Margin="0,100,400,0" VerticalAlignment="Top" Width="90" Click="Button_movesquare_Click">
             <StackPanel Height="85" Width="85">
-                <Image Source="../Pictures/s0v1k3.jpg"/>
+                <Image Source="../Pictures/red cube.jpg"/>
             </StackPanel>
         </Button>
         <TextBlock HorizontalAlignment="Center" Height="30" Margin="0,195,400,0" TextWrapping="Wrap" Text="MovinS0v1n" TextAlignment="Center"  VerticalAlignment="Top" Width="136" FontSize="16" FontWeight="Bold"/>
