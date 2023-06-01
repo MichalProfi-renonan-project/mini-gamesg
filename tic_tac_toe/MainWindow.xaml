@@ -66,7 +66,7 @@
     </Window.Resources>
     <Grid>
         <Image  x:Name="backg" gif:AnimationBehavior.SourceUri="Pictures/synthwaveback.gif" Stretch="UniformToFill"/>
-        <Button x:Name="Button_Start" FontFamily="Outrun future" Content="Start" Width="500" Height="70" Margin="150,282,150,0" VerticalAlignment="Top" Click="Button_Click" FontSize="24">
+        <Button x:Name="Button_Start"  Content="Start" Width="500" Height="70" Margin="150,282,150,0" VerticalAlignment="Top" Click="Button_Click" FontSize="24">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\synthbutt.jpeg" Stretch="Fill" />
             </Button.Background>

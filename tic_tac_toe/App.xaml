@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:tic_tac_toe"
              StartupUri="Splashscreenos.xaml">
     <Application.Resources>
-        <Style x:Key="synthfont">
+        <Style x:Key="synth">
             <Setter Property="TextElement.FontFamily"
-                    Value="/font/#synthfont">
+                    Value="../font/#Outrun future">
             </Setter>
         </Style>
     </Application.Resources>
