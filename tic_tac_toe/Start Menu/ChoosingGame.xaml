@@ -10,13 +10,13 @@
     <Grid Background="White">
         <Image  x:Name="backgg" gif:AnimationBehavior.SourceUri="../Pictures/synthwaveback.gif" Stretch="UniformToFill"/>
         <Frame x:Name="frame" Margin="0,-20,0,20" />
-        <TextBlock HorizontalAlignment="Center" Height="56" Margin="0,40,0,0" TextWrapping="Wrap" Text="CHOOSE YOUR GAME!" VerticalAlignment="Top" Width="328" FontSize="30" />
+        <TextBlock Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Height="56" Margin="0,40,0,0" TextWrapping="Wrap" Text="CHOOSE YOUR GAME!" VerticalAlignment="Top" Width="328" FontSize="30" />
         <Button x:Name="Button_tictactoe" Background="Transparent" HorizontalAlignment="Left" Height="90" Margin="50,100,0,0" VerticalAlignment="Top" Width="90" BorderBrush="Transparent" Click="Button_tictactoe_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/tic-tac-toe - project.jpg"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="35" Margin="50,190,0,0" TextWrapping="Wrap" Text="tic-tac-toe" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Foreground="White" HorizontalAlignment="Left" Height="35" Margin="50,190,0,0" TextWrapping="Wrap" Text="tic-tac-toe" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
 
         <Button x:Name="Button_movesquare" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Height="84" Margin="50,490,0,75" VerticalAlignment="Bottom" Width="90" Click="Button_movesquare_Click">
             <StackPanel Height="85" Width="85">
@@ -57,12 +57,12 @@
             </Label>
         </Button>
 
-        <Button x:Name="Button_hadik" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="90" Margin="400,100,0,0" VerticalAlignment="Top" Width="90" Click="Button_hadik_Click">
+        <Button x:Name="Button_hadik" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="90" Margin="500,100,0,0" VerticalAlignment="Top" Width="90" Click="Button_hadik_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/Hadik.png"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Center" Height="30" Margin="400,195,0,0" TextWrapping="Wrap" Text="Snake" VerticalAlignment="Top" Width="56" FontWeight="Bold" FontSize="18"/>
+        <TextBlock Foreground="White" HorizontalAlignment="Center" Height="30" Margin="500,195,0,0" TextWrapping="Wrap" Text="Snake" VerticalAlignment="Top" Width="56" FontWeight="Bold" FontSize="18"/>
 
         <Button x:Name="Button_Pong" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="90" Margin="0,100,80,0" VerticalAlignment="Top" Width="90" Click="Button_Pong_Click">
             <StackPanel Height="87" Width="87">
@@ -71,13 +71,13 @@
         </Button>
 
 
-        <TextBlock HorizontalAlignment="Right" Height="30" Margin="0,195,70,0" TextWrapping="Wrap" TextAlignment="Center"  Text="PongGame" VerticalAlignment="Top" Width="108" FontWeight="Bold" FontSize="18"/>
+        <TextBlock Foreground="White" HorizontalAlignment="Right" Height="30" Margin="0,195,70,0" TextWrapping="Wrap" TextAlignment="Center"  Text="PongGame" VerticalAlignment="Top" Width="108" FontWeight="Bold" FontSize="18"/>
         <Button x:Name="Button_boats" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="90" Margin="0,100,0,0"  VerticalAlignment="Top" Width="90" Click="Button_Boats_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/boatslogo.png"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="center" Height="35" Margin="0,190,0,0" TextWrapping="Wrap" Text="Boats" TextAlignment="Center" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Foreground="White" HorizontalAlignment="center" Height="35" Margin="0,190,0,0" TextWrapping="Wrap" Text="Boats" TextAlignment="Center" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
         <Button HorizontalAlignment="Center" Height="84" Margin="0,486,0,75" VerticalAlignment="Bottom" Width="90" Click="Button_Survival_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/Running man.jpg"/>
@@ -85,12 +85,12 @@
         </Button>
         <TextBlock HorizontalAlignment="Center" Height="35" Margin="0,571,0,50" TextAlignment="Center" TextWrapping="Wrap" Text="Survival" VerticalAlignment="Bottom" Width="90" FontSize="18" FontWeight="Bold"/>
 
-        <Button x:Name="Button_pexeso" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Height="90" Margin="0,500,50,75" VerticalAlignment="Bottom" Width="90" Click="Button_pexeso_Click">
+        <Button x:Name="Button_pexeso" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="90" Margin="0,100,500,0" VerticalAlignment="Top" Width="90" Click="Button_pexeso_Click">
             <StackPanel Height="86" Width="86">
-                <Image Source="../Pictures/gamessplashscreenos.jpg" Height="77"/>
+                <Image Source="../Pictures/Pexeso_icon.png"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Right" Height="30" Margin="0,571,50,50" TextWrapping="Wrap" TextAlignment="Center"  Text="PongGame" VerticalAlignment="Bottom" Width="108" FontWeight="Bold" FontSize="18"/>
+        <TextBlock Foreground="White" HorizontalAlignment="Center" Height="30" Margin="0,195,500,00" TextWrapping="Wrap" TextAlignment="Center"  Text="Pexeso" VerticalAlignment="Top" Width="108" FontWeight="Bold" FontSize="18"/>
 
     </Grid>
 </Window>

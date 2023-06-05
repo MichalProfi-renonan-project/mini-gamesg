@@ -297,5 +297,8 @@
   <ItemGroup>
     <Resource Include="Pictures\red cube.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Pexeso_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

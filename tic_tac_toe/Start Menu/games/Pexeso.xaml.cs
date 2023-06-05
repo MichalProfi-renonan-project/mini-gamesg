@@ -20,115 +20,171 @@ namespace tic_tac_toe
     /// </summary>
     public partial class Pexeso : Window
     {
-        bool allowClick = false;
-        Image firstGuess;
+        bool allowClick = true;
+        Label firstGuess;
         Random rnd = new Random();
         DispatcherTimer clickTimer = new DispatcherTimer();
         int time = 60;
         DispatcherTimer timer = new DispatcherTimer();
-        
-        
+        bool gameStarted = false;
+
+        public List<int> GeneratedValues { get; set; }
+
         public Pexeso()
         {
             InitializeComponent();
-
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
+        //    timer.Interval = TimeSpan.FromSeconds(1);
+          //  clickTimer.Interval = TimeSpan.FromSeconds(1);
+           // clickTimer.Tick += ClickTimer_Tick;
+           
+        }
 
-            timer.Interval = TimeSpan.FromSeconds(1);
-        }
-        private Image[] immages
+        private void StartGame(object sender, RoutedEventArgs e)
         {
-            get { return Pole.Children.OfType<Image>().ToArray(); }
+            GeneratedValues = RandomGenerated();
+            DataContext = this;
+            setRandomNumbers();
+          //  timer.Start();
+         //   timer.Tick += Timer_Tick;
+            gameStarted = true;
         }
-        private static IEnumerable<BitmapImage> images
+
+        private List<int> RandomGenerated()
         {
-            get
+            List<int> numberList = new List<int>();
+            int generatedNumber;
+            Random random = new Random();
+
+            for (int i = 0; i < 6; i++)
             {
-                return new BitmapImage[]
-                {
-                    new BitmapImage(new Uri("Properties/Resources/Hot-dog.png", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/Oliver.png", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/Vydra.png", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/uwu_cat.png", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/s0v1k3.jpg", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/Pes.jpg", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/patkan.png", UriKind.RelativeOrAbsolute)),
-                    new BitmapImage(new Uri("Properties/Resources/patkan2.png", UriKind.RelativeOrAbsolute)),
+                generatedNumber = random.Next(1, 1000);
+                numberList.Add(generatedNumber);
+                numberList.Add(generatedNumber);
+            }
 
-                };
+            return numberList;
+        }
+
+        private void setRandomNumbers()
+        {
+            List<Label> labels = new List<Label>()
+        {
+            label1,
+            label2,
+            label3,
+            label4,
+            label5,
+            label6,
+            label7,
+            label8,
+            label9,
+            label10,
+            label11,
+            label12,
+        };
+            ShuffleLabels(labels);
+
+            for (int i = 0; i < GeneratedValues.Count; i++)
+            {
+                labels[i].Content = GeneratedValues[i].ToString();
+                labels[i].Background = Brushes.Black;
+                labels[i].FontSize = 24;
+                labels[i].HorizontalContentAlignment = HorizontalAlignment.Center;
+                labels[i].VerticalContentAlignment = VerticalAlignment.Center;
+                //    labels[i].MouseDown += Label_Click;
+            }
+
+            
+        }
+
+        public static void ShuffleLabels(List<Label> labels)
+        {
+            Random random = new Random();
+
+            for (int i = 0; i < labels.Count - 1; i++)
+            {
+                int randomIndex = random.Next(i, labels.Count);
+                Label temp = labels[i];
+                labels[i] = labels[randomIndex];
+                labels[randomIndex] = temp;
             }
         }
-        private void startGameTimer()
+
+        private Label beforeLabel = null;
+        private string firstTap = null;
+        private string secondTap = null;
+        private int pocetPokusov = 0;
+        private int pocetUhadnutých = 0;
+        private bool test = false;
+
+        private async void Label_Click(object sender, MouseButtonEventArgs e)
         {
-            timer.Start();
-            timer.Tick += delegate
+            
+
+            Label clickedLabel = (Label)sender;
+            clickedLabel.Background = Brushes.White;
+
+
+            if(firstTap == null)
+                firstTap = clickedLabel.Content.ToString();
+            else
             {
-                time--;
-                if (time < 0)
+                secondTap = firstTap;
+                firstTap = clickedLabel.Content.ToString();
+            }
+
+            if (beforeLabel != null)
+            {
+
+                if (secondTap != null && firstTap == secondTap)
                 {
-                    timer.Stop();
-                    MessageBox.Show("Time off");
-                    ResetImages();
+                    
+                   
+                    clickedLabel.Background = Brushes.Chartreuse;
+                    clickedLabel.Foreground = Brushes.Chartreuse;
+                    beforeLabel.Background = Brushes.Chartreuse;
+                    beforeLabel.Foreground = Brushes.Chartreuse;
+                    await Task.Delay(1400);
+                    clickedLabel.IsEnabled = false;
+                    beforeLabel.IsEnabled = false;
+                    beforeLabel = null;
+                    firstTap = null;
+                    secondTap = null;
+
+                    pocetUhadnutých++;
+                    if (pocetUhadnutých == 6)
+                        MessageBox.Show("Vyhral si! Potreboval si " + pocetPokusov.ToString() + " pokusov.");
+                       
+
                 }
-
-                var sstime = TimeSpan.FromSeconds(time);
-
-                LblTime.Content = "00: " + time.ToString();
-            };
-        }
-        private void ResetImages()
-        {
-            foreach (var pic in immages)
-            {
-                pic.Tag = null;
-                pic.Visibility = Visibility.Visible;
+                else if (secondTap != null && firstTap != secondTap)
+                {
+                   
+                    await Task.Delay(1400);
+                    clickedLabel.Background = Brushes.Black;
+                    beforeLabel.Background = Brushes.Black;
+                    beforeLabel = null;
+                    firstTap = null;
+                    secondTap = null;
+                }
             }
-
-            HideImages();
-            setRandomImages();
-            time = 60;
-            timer.Start();
-        }
-
-        
-
-        private void HideImages()
-        {
-            foreach (var image in immages)
-            {
-                image.Source = new BitmapImage(new Uri("Properties/Resources/what_if.png", UriKind.RelativeOrAbsolute));
+            if (test) {
+                pocetPokusov++;
+                test = false;
             }
-        }
-        private Image getFreeSlot()
-        {
-            int num;
-            int daco = 0;
-            do
+            else
             {
-                num = rnd.Next(0, immages.Count());
-                Console.WriteLine(num);
-                
+                test = true;
             }
-            while (daco<2);
-            return immages[num];
-            daco++;
-        }
-        private void setRandomImages()
-        {
-            foreach (var image in images)
-            {
-                getFreeSlot().Tag = image;
-                getFreeSlot().Tag = image;
-            }
-        }
-        private void CLICKTIMER_TICK(object sender, EventArgs e)
-        {
-            HideImages();
+            
+            
+            beforeLabel = clickedLabel;
 
-            allowClick = true;
-            clickTimer.Stop();
         }
+
+
 
         private void Button_back_Click(object sender, RoutedEventArgs e)
         {
@@ -137,50 +193,9 @@ namespace tic_tac_toe
             back.Show();
         }
 
-        private void clickImage(object sender, MouseButtonEventArgs e)
+        private void LabelButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!allowClick) return;
 
-            var pic = (Image)sender;
-
-            if (firstGuess == null)
-            {
-                firstGuess = pic;
-                pic.Source = (ImageSource)pic.Tag;
-                return;
-            }
-
-            pic.Source = (ImageSource)pic.Tag;
-
-            if (pic.Source == firstGuess.Source && pic != firstGuess)
-            {
-                pic.Visibility = firstGuess.Visibility = Visibility.Hidden;
-                {
-                    firstGuess = pic;
-                }
-                HideImages();
-            }
-            else
-            {
-                allowClick = false;
-                clickTimer.Start();
-            }
-
-            firstGuess = null;
-            if (immages.Any(p => p.Visibility == Visibility.Visible)) return;
-            MessageBox.Show("You win! Now try again");
-            ResetImages();
-        }
-
-        private void startGame(object sender, RoutedEventArgs e)
-        {
-            allowClick = true;
-            setRandomImages();
-            HideImages();
-            startGameTimer();
-            clickTimer.Interval = TimeSpan.FromSeconds(1);
-            clickTimer.Tick += CLICKTIMER_TICK;
-            Start.IsEnabled = false;
         }
     }
-}
+    }
