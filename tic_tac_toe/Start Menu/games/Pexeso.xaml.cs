@@ -154,8 +154,10 @@ namespace tic_tac_toe
                     secondTap = null;
 
                     pocetUhadnutých++;
+                    
+                    
                     if (pocetUhadnutých == 6)
-                        MessageBox.Show("Vyhral si! Potreboval si " + pocetPokusov.ToString() + " pokusov.");
+                    MessageBox.Show("Vyhral si! Potreboval si " + pocetPokusov.ToString() + " pokusov.");
                        
 
                 }
@@ -172,6 +174,7 @@ namespace tic_tac_toe
             }
             if (test) {
                 pocetPokusov++;
+                LblPokus.Content = "Pokusy: " + pocetPokusov;
                 test = false;
             }
             else

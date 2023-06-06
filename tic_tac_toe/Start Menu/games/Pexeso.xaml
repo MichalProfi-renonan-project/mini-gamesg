@@ -18,7 +18,7 @@
             </Grid.RowDefinitions>
             <Button Margin="0,20,0,0" Height="50" VerticalAlignment="Top" Grid.Row="0" x:Name="Button_back" Content="Back"  Click="Button_back_Click" FontSize="18" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}"/>
             <Button Height="50" VerticalAlignment="Bottom" Grid.Row="0" Content="Start" Margin="0,0,0,30" FontWeight="Bold" FontSize="18" Background="Transparent" BorderBrush="Transparent" Click="StartGame" x:Name="Start"/>
-            <Label VerticalAlignment="Center" Grid.Row="1" x:Name="LblTime" Content="00:60" Canvas.Left="206" Canvas.Top="-27" Foreground="White" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Background="Black"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" x:Name="LblPokus" Content="Pokusy: 0" Canvas.Left="206" Canvas.Top="-27" Foreground="White" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Background="Black"/>
         </Grid>
         <Grid Grid.Column="1">
             <Button x:Name="button1" HorizontalAlignment="Left" Height="160" Margin="80,80,0,0" VerticalAlignment="Top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">

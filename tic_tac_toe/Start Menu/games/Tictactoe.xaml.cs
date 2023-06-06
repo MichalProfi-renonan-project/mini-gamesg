@@ -39,9 +39,10 @@ namespace tic_tac_toe
             WindowStyle = WindowStyle.None;
             lblcounter.Content = $"X: {Winscross.ToString()} O:{Winscircle.ToString()}";
         }
-        static void lbgold(Label lbl)
+        static void lbcolor(Label lbl)
         {
-            lbl.Foreground = Brushes.Gold;
+            var brush = (SolidColorBrush)new BrushConverter().ConvertFrom("#85388c");
+            lbl.Foreground = brush;
         }
 
         public void AddLabel(Label label)  
@@ -115,6 +116,7 @@ namespace tic_tac_toe
 
             if (clickscounter > 8)
             {
+                MessageBox.Show("draw");
                 resetgame();
             }
             if (WinChecker2(lbl1, lbl2, lbl3))
@@ -216,10 +218,9 @@ namespace tic_tac_toe
         {
             if (lbl1.Content != null && lbl2.Content != null && lbl3.Content != null && lbl1.Content == lbl2.Content && lbl2.Content == lbl3.Content)
             {
-
-                lbgold(labels[0]);
-                lbgold(lbl2);
-                lbgold(lbl3);
+                lbcolor(lbl1);
+                lbcolor(lbl2);
+                lbcolor(lbl3);
                 return true;
             }
             else

@@ -17,8 +17,8 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -54,7 +54,7 @@
         <Label Grid.Column="2" Grid.Row="2" x:Name="lbl9" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="120"></Label>
         <Button x:Name="Button_backd" Content="Back" HorizontalAlignment="Left" Height="27" Margin="0,-45,0,0" VerticalAlignment="Top" Width="64" Click="Button_backd_Click" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblcounter" Grid.Column="2" Content="" HorizontalAlignment="Left" Height="35" Margin="169,-43,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.5,0.5" FontSize="18">
-         
+
         </Label>
     </Grid>
 
