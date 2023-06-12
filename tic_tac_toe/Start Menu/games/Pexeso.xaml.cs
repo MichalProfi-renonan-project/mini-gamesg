@@ -57,7 +57,7 @@ namespace tic_tac_toe
             int generatedNumber;
             Random random = new Random();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 9; i++)
             {
                 generatedNumber = random.Next(1, 1000);
                 numberList.Add(generatedNumber);
@@ -83,6 +83,12 @@ namespace tic_tac_toe
             label10,
             label11,
             label12,
+            label13,
+            label14,
+            label15,
+            label16,
+            label17,
+            label18,
         };
             ShuffleLabels(labels);
 
@@ -93,6 +99,7 @@ namespace tic_tac_toe
                 labels[i].FontSize = 24;
                 labels[i].HorizontalContentAlignment = HorizontalAlignment.Center;
                 labels[i].VerticalContentAlignment = VerticalAlignment.Center;
+
                 //    labels[i].MouseDown += Label_Click;
             }
 
@@ -109,6 +116,7 @@ namespace tic_tac_toe
                 Label temp = labels[i];
                 labels[i] = labels[randomIndex];
                 labels[randomIndex] = temp;
+                
             }
         }
 
@@ -126,65 +134,69 @@ namespace tic_tac_toe
             Label clickedLabel = (Label)sender;
             clickedLabel.Background = Brushes.White;
 
-
-            if(firstTap == null)
-                firstTap = clickedLabel.Content.ToString();
-            else
-            {
-                secondTap = firstTap;
-                firstTap = clickedLabel.Content.ToString();
-            }
-
-            if (beforeLabel != null)
+            if (clickedLabel.Content != null)
             {
 
-                if (secondTap != null && firstTap == secondTap)
+                if (firstTap == null)
+                    firstTap = clickedLabel.Content.ToString();
+                else
                 {
-                    
-                   
-                    clickedLabel.Background = Brushes.Chartreuse;
-                    clickedLabel.Foreground = Brushes.Chartreuse;
-                    beforeLabel.Background = Brushes.Chartreuse;
-                    beforeLabel.Foreground = Brushes.Chartreuse;
-                    await Task.Delay(1400);
-                    clickedLabel.IsEnabled = false;
-                    beforeLabel.IsEnabled = false;
-                    beforeLabel = null;
-                    firstTap = null;
-                    secondTap = null;
-
-                    pocetUhadnutých++;
-                    
-                    
-                    if (pocetUhadnutých == 6)
-                    MessageBox.Show("Vyhral si! Potreboval si " + pocetPokusov.ToString() + " pokusov.");
-                       
-
+                    secondTap = firstTap;
+                    firstTap = clickedLabel.Content.ToString();
                 }
-                else if (secondTap != null && firstTap != secondTap)
+
+                if (beforeLabel != null)
                 {
-                   
-                    await Task.Delay(1400);
-                    clickedLabel.Background = Brushes.Black;
-                    beforeLabel.Background = Brushes.Black;
-                    beforeLabel = null;
-                    firstTap = null;
-                    secondTap = null;
-                }
-            }
-            if (test) {
-                pocetPokusov++;
-                LblPokus.Content = "Pokusy: " + pocetPokusov;
-                test = false;
-            }
-            else
-            {
-                test = true;
-            }
-            
-            
-            beforeLabel = clickedLabel;
 
+                    if (secondTap != null && firstTap == secondTap)
+                    {
+
+
+                        clickedLabel.Background = Brushes.Chartreuse;
+                        clickedLabel.Foreground = Brushes.Black;
+                        beforeLabel.Background = Brushes.Chartreuse;
+                        beforeLabel.Foreground = Brushes.Black;
+                        clickedLabel.IsEnabled = false;
+                        beforeLabel.IsEnabled = false;
+                        beforeLabel = null;
+                        firstTap = null;
+                        secondTap = null;
+
+                        pocetUhadnutých++;
+
+
+                        if (pocetUhadnutých == 9)
+                            MessageBox.Show("Vyhral si! Potreboval si " + pocetPokusov.ToString() + " pokusov.");
+
+
+                    }
+                    else if (secondTap != null && firstTap != secondTap)
+                    {
+
+                        await Task.Delay(1000);
+                        clickedLabel.Background = Brushes.Black;
+                        clickedLabel.Foreground = Brushes.Black;
+                        beforeLabel.Foreground = Brushes.Black;
+                        beforeLabel.Background = Brushes.Black;
+                        beforeLabel = null;
+                        firstTap = null;
+                        secondTap = null;
+                    }
+                }
+                if (test)
+                {
+                    pocetPokusov++;
+                    LblPokus.Content = "Pokusy: " + pocetPokusov;
+                    test = false;
+                }
+                else
+                {
+                    test = true;
+                }
+
+
+                beforeLabel = clickedLabel;
+            }
         }
 
 

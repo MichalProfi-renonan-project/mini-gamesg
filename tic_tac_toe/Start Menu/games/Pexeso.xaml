@@ -25,11 +25,11 @@
     <Label x:Name="label1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
-<Button x:Name="button2" HorizontalAlignment="Center" Height="160" Margin="0,80,420,0" VerticalAlignment="Top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+<Button x:Name="button2" HorizontalAlignment="Center" Height="160" Margin="0,80,620,0" VerticalAlignment="Top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
-<Button x:Name="button3" HorizontalAlignment="Center" Height="160" Margin="420,80,0,0" VerticalAlignment="Top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+<Button x:Name="button3" HorizontalAlignment="Center" Height="160" Margin="620,80,0,0" VerticalAlignment="Top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
@@ -41,11 +41,11 @@
                 <Label x:Name="label5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
-<Button x:Name="button6" HorizontalAlignment="Center" Height="160" Margin="0,0,420,0" VerticalAlignment="Center" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+<Button x:Name="button6" HorizontalAlignment="Center" Height="160" Margin="0,0,620,0" VerticalAlignment="Center" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
-<Button x:Name="button7" HorizontalAlignment="Center" Height="160" Margin="420,0,0,0" VerticalAlignment="Center" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+<Button x:Name="button7" HorizontalAlignment="Center" Height="160" Margin="620,0,0,0" VerticalAlignment="Center" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
@@ -57,17 +57,35 @@
                 <Label x:Name="label9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
-<Button x:Name="button10" HorizontalAlignment="Center" Height="160" Margin="0,0,420,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+<Button x:Name="button10" HorizontalAlignment="Center" Height="160" Margin="0,0,620,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
-<Button x:Name="button11" HorizontalAlignment="Center" Height="160" Margin="420,0,0,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+<Button x:Name="button11" HorizontalAlignment="Center" Height="160" Margin="620,0,0,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label11" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
 
 <Button x:Name="button12" HorizontalAlignment="Right" Height="160" Margin="0,0,80,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
                 <Label x:Name="label12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
 </Button>
+            <Button x:Name="button13" HorizontalAlignment="Center" Height="160" Margin="0,80,90,0" VerticalAlignment="top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+                <Label x:Name="label13" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
+            </Button>
+            <Button x:Name="button14" HorizontalAlignment="Center" Height="160" Margin="0,0,90,0" VerticalAlignment="Center" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+                <Label x:Name="label14" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
+            </Button>
+            <Button x:Name="button15" HorizontalAlignment="Center" Height="160" Margin="0,0,90,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+                <Label x:Name="label15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
+            </Button>
+            <Button x:Name="button16" HorizontalAlignment="Center" Height="160" Margin="90,80,0,0" VerticalAlignment="Top" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+                <Label x:Name="label16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
+            </Button>
+            <Button x:Name="button17" HorizontalAlignment="Center" Height="160" Margin="90,0,0,0" VerticalAlignment="Center" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+                <Label x:Name="label17" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
+            </Button>
+            <Button x:Name="button18" HorizontalAlignment="Center" Height="160" Margin="90,0,0,80" VerticalAlignment="Bottom" Width="160" Background="#CCDDEEFF" BorderBrush="Transparent" Click="LabelButton_Click">
+                <Label x:Name="label18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" MouseDown="Label_Click" Height="150" Width="150"/>
+            </Button>
 
         </Grid>
 
