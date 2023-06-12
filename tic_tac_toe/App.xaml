@@ -4,9 +4,14 @@
              xmlns:local="clr-namespace:tic_tac_toe"
              StartupUri="Splashscreenos.xaml">
     <Application.Resources>
-        <Style x:Key="synth">
+        <Style x:Key="synth"  TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
             <Setter Property="TextElement.FontFamily"
                     Value="../font/#Outrun future">
+            </Setter>
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <ImageBrush ImageSource="Pictures/synthbuttXD4.png"/>
+                </Setter.Value>
             </Setter>
         </Style>
     </Application.Resources>

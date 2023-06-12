@@ -232,7 +232,7 @@ namespace tic_tac_toe
 
             if (lbl1.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -245,7 +245,7 @@ namespace tic_tac_toe
 
             if (lbl2.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -258,7 +258,7 @@ namespace tic_tac_toe
 
             if (lbl3.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -269,7 +269,7 @@ namespace tic_tac_toe
         {
             if (lbl4.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -280,7 +280,7 @@ namespace tic_tac_toe
         {
             if (lbl5.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -291,7 +291,7 @@ namespace tic_tac_toe
         {
             if (lbl6.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -303,7 +303,7 @@ namespace tic_tac_toe
         {
             if (lbl7.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -315,7 +315,7 @@ namespace tic_tac_toe
         {
             if (lbl8.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {
@@ -328,7 +328,7 @@ namespace tic_tac_toe
 
             if (lbl9.Content != null)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("cant chose 1 button 2 times");
             }
             else
             {

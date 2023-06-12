@@ -261,9 +261,6 @@
     <Resource Include="Pictures\lopta.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\synthwavebackg.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="PexesoPictures\Oliver.png" />
   </ItemGroup>
   <ItemGroup>
@@ -291,14 +288,16 @@
     <Resource Include="PexesoPictures\what_if.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\synthbutt.jpeg" />
-    <Resource Include="Pictures\synthwaveback.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Pictures\red cube.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\Pexeso_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\synthwaveback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\synthbuttXD4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
