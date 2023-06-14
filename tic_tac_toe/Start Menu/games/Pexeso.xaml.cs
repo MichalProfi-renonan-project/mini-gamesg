@@ -165,9 +165,15 @@ namespace tic_tac_toe
                         pocetUhadnutých++;
 
 
-                        if (pocetUhadnutých == 9)
+                    if (pocetUhadnutých == 9)
+                        {
                             MessageBox.Show("Vyhral si! Potreboval si " + pocetPokusov.ToString() + " pokusov.");
 
+                            this.Close();
+                            ChoosingGame back = new ChoosingGame();
+                            back.Show();
+                        }
+                        
 
                     }
                     else if (secondTap != null && firstTap != secondTap)
