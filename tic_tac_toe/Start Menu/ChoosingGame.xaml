@@ -23,7 +23,7 @@
                 <Image Source="../Pictures/red cube.jpg"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="30,576,0,50" TextWrapping="Wrap" Text="MovinS0v1n" TextAlignment="Center"  VerticalAlignment="Bottom" Width="136" FontSize="16" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="30,576,0,40" Foreground="White" TextWrapping="Wrap" Text="MovinS0v1n" TextAlignment="Center"  VerticalAlignment="Bottom" Width="136" FontSize="16" FontWeight="Bold"/>
 
         <Button x:Name="Button_back" Content="Back" HorizontalAlignment="Left" Height="25" VerticalAlignment="Bottom" Width="86" Click="Button_back_Click" Background="White" FontSize="16" FontWeight="Bold" Margin="20,0,0,20"/>
 
@@ -78,12 +78,12 @@
             </StackPanel>
         </Button>
         <TextBlock Foreground="White" HorizontalAlignment="center" Height="35" Margin="0,190,0,0" TextWrapping="Wrap" Text="Boats" TextAlignment="Center" VerticalAlignment="Top" Width="90" FontSize="18" FontWeight="Bold"/>
-        <Button HorizontalAlignment="Center" Height="84" Margin="0,486,0,75" VerticalAlignment="Bottom" Width="90" Click="Button_Survival_Click">
+        <Button HorizontalAlignment="Center" Height="84" Margin="0,0,0,75" VerticalAlignment="Bottom" Width="90" Click="Button_Survival_Click">
             <StackPanel Height="85" Width="85">
                 <Image Source="../Pictures/Running man.jpg"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Center" Height="35" Margin="0,571,0,50" TextAlignment="Center" TextWrapping="Wrap" Text="Survival" VerticalAlignment="Bottom" Width="90" FontSize="18" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Height="35" Margin="0,0,0,40" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" Text="Survival" VerticalAlignment="Bottom" Width="90" FontSize="18" FontWeight="Bold"/>
 
         <Button x:Name="Button_pexeso" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="90" Margin="0,100,500,0" VerticalAlignment="Top" Width="90" Click="Button_pexeso_Click">
             <StackPanel Height="86" Width="86">

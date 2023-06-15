@@ -23,7 +23,8 @@
         </Grid>
 
         <Canvas x:Name ="Pongscreen" Focusable="True" KeyUp="KeyIsUp" KeyDown="KeyIsDown" Margin="0,30,-0.4,0.2" Grid.RowSpan="2" Background="Black">
-
+            <Label Content="Player 1 : W S" Canvas.Left="300" Foreground="White" FontWeight="Bold" FontSize="20"></Label>
+            <Label Content="Player 2 : O L" Canvas.Right="300" Foreground="White" FontWeight="Bold" FontSize="20"></Label>
             <Ellipse Name="Ball" Height="40" Width="40" Fill="Red" Canvas.Left="611" Canvas.Top="105" RenderTransformOrigin="-5.217,-0.13" ></Ellipse>
             <Rectangle Fill="#FFF4F4F5" Tag="Enemak" x:Name="Player2" Height="200" Canvas.Right="0" Stroke="Black" Canvas.Top="147" Width="75"/>
             <Rectangle Fill="#FFF4F4F5" Tag="Hrac1" x:Name="Player1" Height="200" Canvas.Left="0" Stroke="Black" Canvas.Top="147" Width="75"/>

@@ -10,7 +10,7 @@
     
     <Grid>
         <Image  x:Name="backimg" Source="Pictures/synthwaveback.jpg" Stretch="UniformToFill"/>
-        <Button  Style="{StaticResource synth}" x:Name="Button_Start"  Content="Start" Width="600" Height="150" Margin="0,0,0,300" VerticalAlignment="Bottom" Click="Button_Click" FontSize="24" FontFamily="#Outrun Future">
+        <Button  Style="{StaticResource synth}" x:Name="Button_Start" Content="Start" Width="600" Height="150" Margin="0,0,0,300" VerticalAlignment="Bottom" Click="Button_Click" FontSize="24" FontFamily="#Outrun Future">
         </Button>
         <Button  Style="{StaticResource synth}" x:Name="Button_exit" Content="Exit" Height="150" Margin="0,0,0,125" VerticalAlignment="Bottom"  Width="600" Click="Button_exit_Click" FontSize="24" FontFamily="#Outrun Future">
         </Button>
