@@ -299,5 +299,26 @@
   <ItemGroup>
     <Resource Include="Pictures\synthbuttXD4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game_over_final.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\close_icon_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\minimize_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\maximize_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\closeicon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\tic-tac-toe_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\battleships_final.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

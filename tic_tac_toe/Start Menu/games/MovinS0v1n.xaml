@@ -27,7 +27,7 @@
                 
             </Rectangle>
            
-            <TextBlock Height="56" Canvas.Left="176" TextWrapping="Wrap" Text="Move S0v1n with W A S D" Canvas.Top="26" Width="484" FontSize="36" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Height="56" Canvas.Left="176" TextWrapping="Wrap" Text="Move Square with W A S D" Canvas.Top="26" Width="484" FontSize="36" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
 
         

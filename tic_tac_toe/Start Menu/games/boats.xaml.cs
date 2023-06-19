@@ -57,9 +57,10 @@ namespace tic_tac_toe
             if (begin)
             {
                 playerPositionLabels = new List<Label> { lblA1, lblA2, lblA3, lblA4, lblA5, lblA6, lblA7, lblA8, lblB1, lblB2, lblB3, lblB4, lblB5, lblB6, lblB7, lblB8, lblC1, lblC2, lblC3, lblC4, lblC5, lblC6, lblC7, lblC8, lblD1, lblD2, lblD3, lblD4, lblD5, lblD6, lblD7, lblD8, lblE1, lblE2, lblE3, lblE4, lblE5, lblE6, lblE7, lblE8, lblF1, lblF2, lblF3, lblF4, lblF5, lblF6, lblF7, lblF8, lblG1, lblG2, lblG3, lblG4, lblG5, lblG6, lblG7, lblG8, lblH1, lblH2, lblH3, lblH4, lblH5, lblH6, lblH7, lblH8, lblCH1, lblCH2, lblCH3, lblCH4, lblCH5, lblCH6, lblCH7, lblCH8, };
-                
+
                 System.Threading.Thread.Sleep(2000);
                 boom.Play();
+                
                 if (playerPositionButtons.Count > 0 && round > 0 && totalships == 0)
                 {
                     round -= 1;
@@ -205,8 +206,8 @@ namespace tic_tac_toe
 
                 int index = enemyPositionButtons.FindIndex(a => a.Name == firePosition);
 
-                BOMBA.Play();
-                System.Threading.Thread.Sleep(2000);
+                boom.Play();
+                //System.Threading.Thread.Sleep(2000);
 
 
                 if (index > 0)

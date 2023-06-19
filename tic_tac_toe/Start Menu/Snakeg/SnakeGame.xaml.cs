@@ -36,7 +36,8 @@ namespace tic_tac_toe
         Random _randoTron;
         Direction _currentDirection;        
         SnakeElement _tailBackup;
-        SoundPlayer game_over_player = new SoundPlayer(Properties.Resources.game_over);
+     //   SoundPlayer game_over_player = new SoundPlayer(Properties.Resources.game_over);
+        SoundPlayer game_over_final = new SoundPlayer(Properties.Resources.game_over_final);
         SoundPlayer eatsnake = new SoundPlayer(Properties.Resources.eatingsfxwav_14588);
 
 
@@ -290,7 +291,7 @@ namespace tic_tac_toe
             if (hadCollision)
             {
                 
-                game_over_player.Play();
+                game_over_final.Play();
                 MessageBox.Show("Game Over collided with your own tail YOU STUPID!");
                 ResetGame();
                 InitializeGame();                
@@ -303,7 +304,7 @@ namespace tic_tac_toe
             if (snakeHead.X > _gameWidth - _elementSize || snakeHead.X < 0 || snakeHead.Y < 0 || snakeHead.Y > _gameHeight - _elementSize)
             {
                                
-                game_over_player.Play();                
+                game_over_final.Play();                
                 MessageBox.Show("Game Over collided with bounds! Restart?");
                 ResetGame();
                 InitializeGame();
