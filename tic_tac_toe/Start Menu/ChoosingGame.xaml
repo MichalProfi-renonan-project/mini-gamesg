@@ -57,12 +57,12 @@
             </Label>
         </Button>
 
-        <Button x:Name="Button_hadik" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="200" Margin="0,100,0,0" VerticalAlignment="Top" Width="200" Click="Button_hadik_Click">
+        <Button x:Name="Button_hadik" Background="Transparent" BorderBrush="Black" HorizontalAlignment="Center" Height="200" Margin="0,100,0,0" VerticalAlignment="Top" Width="200" Click="Button_hadik_Click">
             <StackPanel Height="195" Width="195">
                 <Image Source="../Pictures/Hadik.png"/>
             </StackPanel>
         </Button>
-        <TextBlock Foreground="White" HorizontalAlignment="Center" Height="30" Margin="0,300,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Snake" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="27"/>
+        <TextBlock Foreground="Black" Background="Transparent" HorizontalAlignment="Center" Height="30" Margin="0,300,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Snake" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="27"/>
 
         <Button x:Name="Button_Pong" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="200" Margin="500,400,0,0" VerticalAlignment="Top" Width="200" Click="Button_Pong_Click">
             <StackPanel Height="197" Width="197">
@@ -71,7 +71,7 @@
         </Button>
 
 
-        <TextBlock Foreground="White" HorizontalAlignment="Center" Height="30" Margin="500,600,0,0" TextWrapping="Wrap" TextAlignment="Center"  Text="PongGame" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="27"/>
+        <TextBlock Foreground="White" HorizontalAlignment="Center" Height="34" Margin="500,600,0,0" TextWrapping="Wrap" TextAlignment="Center"  Text="PongGame" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="27"/>
         <Button x:Name="Button_boats" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Height="200" Margin="00,400,500,0"  VerticalAlignment="Top" Width="200" Click="Button_Boats_Click">
             <StackPanel Height="195" Width="195">
                 <Image Source="../Pictures/battleships_final.png"/>
